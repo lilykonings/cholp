@@ -1,38 +1,36 @@
-/ .col-70
-  
-/   - unless @featured_prints.length == 0
-/     .box-wrapper
-/       h2 Featured Prints
-/       .box
-/         - @featured_prints.each do |p|
-/           div.print-wrapper
-/             div.thumbnail-wrapper
-/               = image_tag p.picture_zero, class: 'thumbnail'
-/             = link_to p.name, "p/#{p.id}"
-/             p = p.description
-/         .clear
+.uk-grid (data-uk-grid-match data-uk-grid-margin)
+  - unless @top_prints.length == 0
+    .uk-width-3-4.uk-height-1-1
+      | Hello world
 
-/     .spacing-20
+  - unless @top_prints.length == 0
+    .uk-width-1-4.uk-height-1-1
+      fieldset.info-box.uk-width-1-1
+        legend Updates
+        | Hello world
 
-/   - unless @top_prints.length == 0
-/     .box-wrapper
-/       h2 Top Prints
-/       .box
-/         - @top_prints.each do |p|
-/           div.print-wrapper
-/             div.thumbnail-wrapper
-/               = image_tag p.picture_zero, class: 'thumbnail'
-/             = link_to p.name, "p/#{p.id}"
-/             p = p.description
-/         .clear
+.uk-grid (data-uk-grid-match data-uk-grid-margin)
+  - unless @top_prints.length == 0
+    .uk-width-3-4.uk-height-1-1
+      fieldset.info-box.uk-width-1-1
+        legend Top Prints
+        .uk-grid (data-uk-grid-margin)
+          - @top_prints.each do |p|
+            dl.uk-width-1-3
+              dt
+                a.grid_img [href="p/#{p.id}"]
+                  = image_tag p.picture_zero, class: 'uk-width-1-1'
+                a.grid_name [href="p/#{p.id}"] = p.name
 
-/ .col-30
-/   .box-wrapper
-/     h2 Top Creators
-/     .box
-/       - @top_creators.each do |c|
-/         div.profile-wrapper
-/           - unless c.icon.nil?
-/           = image_tag c.icon, class: 'thumbnail'
-/           = link_to c.name, "/#{c.name}"
-/           p = c.description
+  - unless @top_prints.length == 0
+    .uk-width-1-4.uk-height-1-1
+      fieldset.info-box.uk-width-1-1
+        legend Top Creators
+        .uk-grid (data-uk-grid-margin)
+          - @top_creators.each do |c|
+            - unless c.icon.nil?
+              .uk-width-1-1
+                a.grid_img [href="/#{c.name}"]
+                  = image_tag c.icon, class: 'uk-width-1-1'
+                a.grid_name [href="/#{c.name}"] = c.name
+                p.grid_desc = c.description

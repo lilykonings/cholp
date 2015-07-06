@@ -5,16 +5,16 @@ This website was private property and should not be used or altered without appr
 Todo
 -------------
 **Homepage**
-* [ ] Section headings (ie Top Prints, Top Creators, etc) should not be situated above their respective boxes, should be embedded between the lines (See Mock 1- Homepage)
+* [X] Section headings (ie Top Prints, Top Creators, etc) should not be situated above their respective boxes, should be embedded between the lines (See Mock 1- Homepage)
 * [ ] Creator Thumbnails (in the Top Creators box) are wrong. See Mock 1 and compare with what is on the site now. For each thumbnail, the image should be smaller, the creator name (linked) should be pulled up higher, the number of prints they have uploaded should be listed below the name, and a short 3 line excerpt from their bio should be at the bottom of the thumbnail
-  * [ ] Bio should be cut off after 3 lines (…)
+  * [X] Bio should be cut off after 3 lines (…)
 * Print Thumbnails (See Mock 5 for a good example)
   * [ ] Images should be bigger, date that the print was uploaded should appear below the title, and the number of views should appear next to the upload date
-  * [ ] There should be no descriptions for these thumbnails
+  * [X] There should be no descriptions for these thumbnails
 * Updates Section
   * See Mock 1 (Homepage)
   * [ ] Section where we can link informational pages on the site (if we want to change our terms of use, or feature a story about the site, or feature additions to functionality)
-  * [ ] Example: line “Additions Have Been Made to Cholp” would appear in the updates section,, user would then click on the line, would link to page with information (text) on site additions
+  * Example: line “Additions Have Been Made to Cholp” would appear in the updates section,, user would then click on the line, would link to page with information (text) on site additions
   * [ ] We need the ability to manage the updates section, possibly through our existing featured section admin portal (cholp/featured while logged in as administrator)
     * [ ] Updates section form (within admin panel) should include 5 slots.  Each slot should have boxes to enter: a title (to be listed in the updates section and the title to the linked page) text (the paragraphs that will appear on the linked page) and date (which will appear at the bottom of each linked page)
     * See Mock 7 (what pages linked in the updates section should generally look like) and Mock 8 (what the Admin Panel should look like) THESE WILL HELP
