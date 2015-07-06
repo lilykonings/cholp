@@ -1,10 +1,6 @@
 Cholp
 =====
-
-
-Notes
--------------
-
+This website was private property and should not be used or altered without appropriate permissions from the organization.
 
 Todo
 -------------
@@ -21,7 +17,7 @@ Todo
   * [ ] Example: line “Additions Have Been Made to Cholp” would appear in the updates section,, user would then click on the line, would link to page with information (text) on site additions
   * [ ] We need the ability to manage the updates section, possibly through our existing featured section admin portal (cholp/featured while logged in as administrator)
     * [ ] Updates section form (within admin panel) should include 5 slots.  Each slot should have boxes to enter: a title (to be listed in the updates section and the title to the linked page) text (the paragraphs that will appear on the linked page) and date (which will appear at the bottom of each linked page)
-    * [ ] See Mock 7 (what pages linked in the updates section should generally look like) and Mock 8 (what the Admin Panel should look like) THESE WILL HELP
+    * See Mock 7 (what pages linked in the updates section should generally look like) and Mock 8 (what the Admin Panel should look like) THESE WILL HELP
 * Featured section
   * See Mock 1 (Homepage)
   * See www.ign.com for an example
