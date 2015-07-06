@@ -1,0 +1,54 @@
+= render "dashboard/sidebar"
+.col-80
+    .box-wrapper
+        h2 Upload
+        .box
+            = form_tag('/prints/new', multipart: true, id: 'edit-form') do
+
+              .left.clear
+                = text_field_tag :name, '', placeholder: 'name', class: 'rounded'
+                = text_area :p, :description, placeholder: 'description', class: 'rounded'
+                = file_field_tag 'stl', class: 'upload'
+                = file_field_tag 'image', class: 'upload'
+                .spacing-10
+
+                p additional images (optional):
+                = file_field_tag 'image1', class: 'upload'
+                = file_field_tag 'image2', class: 'upload'
+                = file_field_tag 'image3', class: 'upload'
+                = file_field_tag 'image4', class: 'upload'
+                = file_field_tag 'image5', class: 'upload'
+                .spacing-10
+
+              .right
+                p minimum dimensions (mm):
+                .block
+                  = number_field_tag :x, nil, in: 0..500, step: 1, placeholder: 'X', class: 'rounded'
+                  = number_field_tag :y, nil, in: 0..500, step: 1, placeholder: 'Y', class: 'rounded'
+                  = number_field_tag :z, nil, in: 0..500, step: 1, placeholder: 'Z', class: 'rounded'
+                .spacing-40
+
+                p print materials:
+                = select_tag :materials, options_for_select(@materials), multiple: true, class: 'rounded'
+                .spacing-5
+
+                p supports color?
+                = radio_button 'p', 'color_supported', 'true'
+                = label_tag 'p', 'yes'
+                = radio_button 'p', 'color_supported', 'false'
+                = label_tag 'p', 'no'
+                .spacing-2
+
+                p recommended printers:
+                = select_tag :printers, options_for_select(@printers), multiple: true, class: 'rounded'
+                .spacing-5
+
+                = number_field_tag :resolution, nil, in: 0..500, step: 1,
+                placeholder: 'resolution (mm)', class: 'rounded'
+                = number_field_tag :tolerance, nil, in: 0..500, step: 1,
+                placeholder: 'tolerance (mm)', class: 'rounded'
+                .spacing-20
+
+                = submit_tag 'upload', class: 'submit'
+
+            .clear

@@ -1,0 +1,52 @@
+= link_to '< back', '/dashboard/manage', class: 'db-button rounded left'
+.spacing-50
+
+= form_tag("/p/#{@p.id}/modify", multipart: true, id: 'edit-form') do
+
+  .left.clear
+    = text_field_tag :name, '', placeholder: 'name', class: 'rounded', value: @p.name
+    = text_area :p, :description, placeholder: 'description', class: 'rounded', value: @p.description
+    = number_field_tag :price, nil, in: 0.00..500.00, step: 0.25, placeholder: 'price', class: 'rounded', value: @p.price
+    = file_field_tag 'stl', class: 'upload'
+    = file_field_tag 'image', class: 'upload'
+    .spacing-10
+
+    p additional images (optional):
+    = file_field_tag 'image1', class: 'upload'
+    = file_field_tag 'image2', class: 'upload'
+    = file_field_tag 'image3', class: 'upload'
+    = file_field_tag 'image4', class: 'upload'
+    = file_field_tag 'image5', class: 'upload'
+    .spacing-10
+
+  .right
+    p minimum dimensions (mm):
+    .block
+      = number_field_tag :x, nil, in: 0..500, step: 1, placeholder: 'X', class: 'rounded', value: @p.min_x
+      = number_field_tag :y, nil, in: 0..500, step: 1, placeholder: 'Y', class: 'rounded', value: @p.min_y
+      = number_field_tag :z, nil, in: 0..500, step: 1, placeholder: 'Z', class: 'rounded', value: @p.min_z
+    .spacing-40
+
+    p print materials:
+    = select_tag :materials, options_for_select(@materials, @p.materials.gsub(/\s|"/,'').split(',')), multiple: true, class: 'rounded'
+    .spacing-5
+
+    p supports color?
+    = radio_button 'p', 'color_supported', (@p.color_supported ? 'true' : 'false')
+    = label_tag 'p', 'yes'
+    = radio_button 'p', 'color_supported', (@p.color_supported ? 'false' : 'true')
+    = label_tag 'p', 'no'
+    .spacing-2
+
+    p recommended printers:
+    = select_tag :printers, options_for_select(@printers, @p.recommended_printers.gsub(/\s|"/,'').split(",")), multiple: true, class: 'rounded'
+    .spacing-5
+
+    = number_field_tag :resolution, nil, in: 0..500, step: 1,
+    placeholder: 'resolution (mm)', class: 'rounded', value: @p.resolution
+    = number_field_tag :tolerance, nil, in: 0..500, step: 1,
+    placeholder: 'tolerance (mm)', class: 'rounded', value: @p.tolerance
+    .spacing-20
+
+    = submit_tag 'save changes', id: 'submit'
+    .spacing-50

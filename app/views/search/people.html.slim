@@ -1,0 +1,15 @@
+.col-30
+    = link_to "Prints Results", "/search?q=#{@q}", class: 'db-button'
+    .spacing-20
+.col-70
+	.box-wrapper
+		h2 Creator Results
+		.box
+			- @people.each do |p|
+			  - unless p.creator.nil?
+					div.print-wrapper
+					  div.thumbnail-wrapper
+					  	= image_tag p.creator.icon, class: 'thumbnail'
+					  = link_to p.username, "/#{p.username}"
+					  p = p.creator.description
+			.clear

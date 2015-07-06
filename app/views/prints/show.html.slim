@@ -1,0 +1,91 @@
+#print
+  .col-70
+    #name = @p.name
+    div.galleria
+        = image_tag @p.picture_zero
+        - if @p.picture_one
+            = image_tag @p.picture_one
+        - if @p.picture_two
+            = image_tag @p.picture_two
+        - if @p.picture_three
+            = image_tag @p.picture_three
+        - if @p.picture_four
+            = image_tag @p.picture_four
+        - if @p.picture_five
+            = image_tag @p.picture_five
+    = link_to "", "#{@p.path}", class: 'print-button'
+    .right
+        br
+        p
+            | Uploaded on 
+            = @p.created_at.strftime("%B %d, %Y")
+            br
+            = @p.num_prints
+            |  views
+    .spacing-20
+    h3 Description
+    p = @p.description
+    .spacing-20
+
+    h3 Specifications
+    - if @p.materials
+        span.pill
+            | Materials: 
+        	= @p.materials
+    - if @p.min_x
+        span.pill
+            | Dimensions: 
+        	= @p.min_x
+        	|  x 
+        	= @p.min_y
+        	|  x 
+        	= @p.min_z
+    - if @p.color_supported
+        span.pill
+        	| Color supported
+    end
+    - if @p.recommended_printers
+        span.pill
+            | Recommended Printers: 
+    	    = @p.recommended_printers
+    - if @p.resolution
+        span.pill
+            | Resolution: 
+    	    = @p.resolution
+    - if @p.tolerance
+        span.pill
+            | Tolerance: 
+    	    = @p.tolerance
+    .spacing-20
+    h3 Comments
+    - @c.each do |c|
+		div.comment-wrapper
+            = link_to "#{User.find_by(id: c.user_id).username}", "/#{User.find_by(id: c.user_id).username}"
+			p = c.comment
+    - if signed_in?
+    	= form_tag("/p/#{@p.id}/comment", multipart: true, id: 'comment-form') do
+    		= text_area_tag "comment", nil, placeholder: 'Comment', id: "comment", rows: "4"
+    		= submit_tag 'Comment'
+    - else
+  .col-30
+    .box-wrapper
+        h2 Uploaded by
+        .box
+          div.profile-wrapper
+            - unless @creator.icon.nil?
+                = image_tag @creator.icon, class: 'thumbnail'
+            = link_to @creator.name, "/#{@creator.name}"
+            p = @creator.description
+    - unless @recommended.length == 0
+      .spacing-20
+      .box-wrapper
+        h2 Recommended Prints
+        .box
+          - @recommended.each do |p|
+              div.profile-wrapper
+                = image_tag p.picture_zero, class: 'thumbnail'
+                = link_to p.name, "/p/#{p.id}"
+                p = p.description
+script
+  | Galleria.loadTheme('/assets/galleria/themes/classic/galleria.classic.min.js');
+  | Galleria.run('.galleria');

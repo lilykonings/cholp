@@ -1,0 +1,29 @@
+.col-30
+    = link_to "Creator Results", "/search/creators?q=#{@q}", class: 'db-button'
+    .spacing-20
+	.box-wrapper
+		h2 Filter
+		.box
+			form action="/search"
+				= text_field_tag :q, params['q'], type: "hidden"
+				.spacing-20
+				h5 Materials
+				.spacing-20
+				= check_box_tag :"materials[]", "ABS", checked=(params['materials'] != nil and params['materials'].include?('ABS'))
+				'ABS
+				br
+				= check_box_tag :"materials[]", "Metal", checked=(params['materials'] != nil and params['materials'].include?('Metal'))
+				'Metal
+				.spacing-20
+				= submit_tag 'Filter'
+.col-70
+	.box-wrapper
+		h2 Prints Results
+		.box
+			- @prints.each do |p|
+				div.print-wrapper
+				  div.thumbnail-wrapper
+				  	= image_tag p.picture_zero, class: 'thumbnail'
+				  = link_to p.name, "p/#{p.id}"
+				  p = p.description
+			.clear

@@ -1,0 +1,15 @@
+.left
+  - if current_user.creator and current_user.creator.active
+    = link_to 'edit creator profile', '/dashboard/edit',
+    class: 'db-button rounded'
+    = link_to 'disable uploading', '/creators/disable',
+    method: :post, class: 'db-button rounded'
+    .spacing-20
+
+    = link_to 'upload', '/dashboard/upload', class: 'db-button rounded'
+    = link_to 'manage prints', '/dashboard/manage', class: 'db-button rounded'
+    = link_to "Settings", edit_user_registration_path, class: 'db-button rounded'
+
+  - else
+    = link_to 'enable uploading', '/creators/enable',
+    method: :post, class: 'db-button'

@@ -1,0 +1,18 @@
+#form
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+
+    #field-row
+      = f.text_field :login, autofocus: true,
+      :placeholder => "email/username", :class => "field rounded"
+      = f.password_field :password, autocomplete: "off",
+      :placeholder => "password", :class => "field rounded"
+
+    = f.submit "log in", :id => "submit"
+
+    #remember
+      - if devise_mapping.rememberable?
+        = f.check_box :remember_me
+        = f.label :remember_me, "remember me"
+
+  #links
+    = render "devise/shared/links"

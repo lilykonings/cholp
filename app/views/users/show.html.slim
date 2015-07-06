@@ -1,0 +1,50 @@
+.col-70
+  #creator-info
+    - unless @c.banner.nil?
+      #banner.ratio-banner = image_tag @c.banner, class: 'framed rounded bordered'
+
+    - unless @c.icon.nil?
+      = image_tag @c.icon, class: 'profile-picture'
+
+    #text
+      span = @c.name
+      i = "since #{@c.created_at.strftime("%m/%d/%Y")}"
+      p = @c.description
+      /.right
+      /  - if current_user
+      /    - if !@is_self && !@subscribed
+      /      = link_to 'Subscribe', "/#{@c.name}/subscribe", class: 'submit'
+      /    - if @subscribed
+      /     = link_to 'Unsubscribe', "/#{@c.name}/unsubscribe", class: 'submit'
+  .clear
+  .spacing-20
+  - unless @featured_prints.length == 0
+    .box-wrapper
+      h2 Featured
+      .box
+          - @featured_prints.each do |p|
+            div.print-wrapper
+              div.thumbnail-wrapper
+                = image_tag p.picture_zero, class: 'thumbnail'
+              = link_to p.name, "p/#{p.id}"
+              p = p.description
+          .clear
+
+    .spacing-20
+
+  - unless @top_prints.length == 0
+    .box-wrapper
+      h2 
+        | Top prints by 
+        = @c.name
+      .box
+        .right
+          = link_to "view all", "/#{@c.name}/all"
+        - @top_prints.each do |p|
+          div.print-wrapper
+            div.thumbnail-wrapper
+              = image_tag p.picture_zero, class: 'thumbnail'
+            = link_to p.name, "p/#{p.id}"
+            p = p.description
+        .clear
+  .clear

@@ -1,0 +1,14 @@
+= render "dashboard/sidebar"
+.col-80
+	.box-wrapper
+		h2 My Uploaded Prints
+		.box
+			- if @prints.length == 0
+				p
+					| Sorry, you have uploaded no prints..
+			- @prints.each do |p|
+				div
+				  = link_to p.name, "/p/#{p.id}"
+				  = link_to 'Delete', "/p/#{p.id}/delete", class: "right"
+				  = link_to 'Edit', "/p/#{p.id}/edit", class: "right margin-right"
+				.spacing-20

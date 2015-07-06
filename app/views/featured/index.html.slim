@@ -1,0 +1,10 @@
+h2 Add Featured Prints
+
+- @prints.each do |p|
+  div
+    = link_to p.name, "p/#{p.id}"
+    = link_to "Remove", "featured/#{p.id}/remove"
+.spacing-50
+= form_tag('/featured/add', multipart: true, id: 'edit-form') do
+	= text_field_tag 'id', nil, class: 'rounded'
+	= submit_tag 'Add', id: 'submit', class: 'rounded'

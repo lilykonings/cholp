@@ -1,0 +1,11 @@
+.col-70
+	.box-wrapper
+		h2 All Prints
+		.box
+			- @prints.each do |p|
+				div.print-wrapper
+				  div.thumbnail-wrapper
+				  	= image_tag p.picture_zero, class: 'thumbnail'
+				  = link_to p.name, "/p/#{p.id}"
+				  p = p.description
+			.clear

@@ -1,0 +1,29 @@
+= render "dashboard/sidebar"
+.col-70
+	- unless @subs.length == 0
+		.box-wrapper
+			h2 Subscriptions
+			.box
+				- @subs.each do |p|
+					div.print-wrapper
+					  div.right.x
+					  	= link_to "x", "/#{p.username}/unsubscribe"
+					  div.thumbnail-wrapper
+					  	= image_tag p.creator.icon, class: 'thumbnail'
+					  = link_to p.username, "/#{p.username}"
+				.clear
+
+		.spacing-20
+
+	- unless @subscribers.length == 0
+		.box-wrapper
+			h2 Subscribers
+			.box
+				- @subscribers.each do |p|
+					div.print-wrapper
+					  div.thumbnail-wrapper
+					  	= image_tag p.creator.icon, class: 'thumbnail'
+					  = link_to p.username, "/#{p.username}"
+				.clear
+
+		.spacing-20
