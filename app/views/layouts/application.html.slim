@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title Source
+    title Cholp
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag "galleria/galleria.js"
     = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"
@@ -9,40 +9,10 @@ html
     = csrf_meta_tags
 
   body
-    #sans-footer
-      header
-        a href="/"
-          img#logo src=(asset_path 'logo.png')
-        form action="/search"
-          input#search.rounded [name="q"
-          placeholder="Search" value=params[:q]]
-
-        #login.rounded
-          - if signed_in?
-            = link_to current_user.username, '/users/edit', class: 'button'
-            = link_to 'logout', destroy_user_session_path,
-            method: :delete, class: 'button'
-          - else
-            = link_to 'signup', new_user_registration_path, class: 'button'
-            = link_to 'login', new_user_session_path, class: 'button'
-
-      p#notice = notice
-      p#alert = alert
-
-      #content == yield
-
-    footer
-      ul
-        li
-          a#privacy href="/assets/cholp_privacy_policy.docx" Privacy Policy
-        li
-          a#terms href="/assets/cholp_terms_of_use.docx" Terms of Agreement
-        li
-          a#contact href="/contact" Contact Us
-      #copyright &copy Cholp 2015
-
-    script
-      | Galleria.loadTheme('/assets/galleria/themes/classic/galleria.classic.min.js');
+    
+  
+  script
+    | Galleria.loadTheme('/assets/galleria/themes/classic/galleria.classic.min.js');
       / #social-buttons
         a href="https://www.facebook.com/"
           img.social src=(asset_path 'facebook128.png')

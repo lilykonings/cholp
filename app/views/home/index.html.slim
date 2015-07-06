@@ -1,38 +1,38 @@
-.col-70
+/ .col-70
   
-  - unless @featured_prints.length == 0
-    .box-wrapper
-      h2 Featured Prints
-      .box
-        - @featured_prints.each do |p|
-          div.print-wrapper
-            div.thumbnail-wrapper
-              = image_tag p.picture_zero, class: 'thumbnail'
-            = link_to p.name, "p/#{p.id}"
-            p = p.description
-        .clear
+/   - unless @featured_prints.length == 0
+/     .box-wrapper
+/       h2 Featured Prints
+/       .box
+/         - @featured_prints.each do |p|
+/           div.print-wrapper
+/             div.thumbnail-wrapper
+/               = image_tag p.picture_zero, class: 'thumbnail'
+/             = link_to p.name, "p/#{p.id}"
+/             p = p.description
+/         .clear
 
-    .spacing-20
+/     .spacing-20
 
-  - unless @top_prints.length == 0
-    .box-wrapper
-      h2 Top Prints
-      .box
-        - @top_prints.each do |p|
-          div.print-wrapper
-            div.thumbnail-wrapper
-              = image_tag p.picture_zero, class: 'thumbnail'
-            = link_to p.name, "p/#{p.id}"
-            p = p.description
-        .clear
+/   - unless @top_prints.length == 0
+/     .box-wrapper
+/       h2 Top Prints
+/       .box
+/         - @top_prints.each do |p|
+/           div.print-wrapper
+/             div.thumbnail-wrapper
+/               = image_tag p.picture_zero, class: 'thumbnail'
+/             = link_to p.name, "p/#{p.id}"
+/             p = p.description
+/         .clear
 
-.col-30
-  .box-wrapper
-    h2 Top Creators
-    .box
-      - @top_creators.each do |c|
-        div.profile-wrapper
-          - unless c.icon.nil?
-          = image_tag c.icon, class: 'thumbnail'
-          = link_to c.name, "/#{c.name}"
-          p = c.description
+/ .col-30
+/   .box-wrapper
+/     h2 Top Creators
+/     .box
+/       - @top_creators.each do |c|
+/         div.profile-wrapper
+/           - unless c.icon.nil?
+/           = image_tag c.icon, class: 'thumbnail'
+/           = link_to c.name, "/#{c.name}"
+/           p = c.description

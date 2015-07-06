@@ -39,6 +39,30 @@ creators:
     - 
     - 
     - '2'
+  - - '3'
+    - '2015-07-06 15:23:16.872837'
+    - '2015-07-06 15:30:47.340754'
+    - true
+    - Modelman
+    - 
+    - "/creators/Modelman/icon.jpg"
+    - ''
+    - 
+    - 
+    - 
+    - '3'
+  - - '4'
+    - '2015-07-06 15:58:30.848545'
+    - '2015-07-06 16:02:07.191654'
+    - true
+    - hellojoe
+    - 
+    - "/creators/hellojoe/icon.jpg"
+    - ''
+    - 
+    - 
+    - 
+    - '4'
 
 ---
 prints:
@@ -91,10 +115,10 @@ prints:
     - '1'
     - '1'
     - '1'
-    - false
+    - true
   - - '2'
     - '2015-07-06 14:48:59.447705'
-    - '2015-07-06 14:48:59.470757'
+    - '2015-07-06 16:05:41.4144'
     - Red Checker Board
     - Red checker board that must be dyed or must be printed in colored plastic.
     - "/prints/2/stl.STL"
@@ -104,7 +128,7 @@ prints:
     - 
     - 
     - 
-    - 
+    - '1'
     - 
     - '75'
     - '75'
@@ -115,10 +139,10 @@ prints:
     - '1'
     - '1'
     - '2'
-    - true
+    - false
   - - '3'
     - '2015-07-06 14:50:14.384752'
-    - '2015-07-06 14:50:14.404104'
+    - '2015-07-06 16:05:30.716044'
     - Board Connector
     - This piece allows the checker board pieces to be connected. Use these between
       each adjacent piece to hold them together. Compatible with my other prints.
@@ -129,7 +153,7 @@ prints:
     - 
     - 
     - 
-    - 
+    - '1'
     - 
     - '60'
     - '60'
@@ -215,7 +239,7 @@ prints:
     - false
   - - '7'
     - '2015-07-06 14:55:33.912065'
-    - '2015-07-06 14:55:33.937903'
+    - '2015-07-06 16:05:27.179766'
     - Ship
     - A ship modeled after the revolutionary era ships. This print is untested and
       contains small parts so be warned.
@@ -226,7 +250,7 @@ prints:
     - 
     - 
     - 
-    - 
+    - '1'
     - 
     - '10'
     - '20'
@@ -237,7 +261,7 @@ prints:
     - '1'
     - '1'
     - '1'
-    - false
+    - true
   - - '8'
     - '2015-07-06 14:56:49.501973'
     - '2015-07-06 14:57:13.796935'
@@ -261,6 +285,130 @@ prints:
     - '1'
     - '1'
     - '1'
+    - true
+  - - '9'
+    - '2015-07-06 15:24:04.752234'
+    - '2015-07-06 16:05:34.275312'
+    - Dice Set Base
+    - A collection of dice of different sizes and sides. You wold have to carve or
+      mark the numbers if you choose to print them.
+    - "/prints/9/stl.STL"
+    - "/prints/9/image.png"
+    - 
+    - 
+    - 
+    - 
+    - 
+    - '1'
+    - 
+    - '10'
+    - '10'
+    - '5'
+    - '"ABS"'
+    - false
+    - '"Cubify"'
+    - '1'
+    - '1'
+    - '3'
+    - true
+  - - '10'
+    - '2015-07-06 15:26:43.637219'
+    - '2015-07-06 15:26:43.669186'
+    - FTRD
+    - 'Prints out the pieces needed to make a face turning rhombic dodecahedron puzzle.
+      You will need the hardware: screws and springs.'
+    - "/prints/10/stl.STL"
+    - "/prints/10/image.png"
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - '15'
+    - '15'
+    - '15'
+    - '"ABS"'
+    - false
+    - '"MakerBot"'
+    - '1'
+    - '1'
+    - '3'
+    - true
+  - - '11'
+    - '2015-07-06 15:27:22.671435'
+    - '2015-07-06 15:27:22.68773'
+    - FTRD Hook Edge
+    - Hook edge for the face turning rhombic dodecahedron. This piece is labeled 5.
+      This print has been successfully printed in ABS.
+    - "/prints/11/stl.STL"
+    - "/prints/11/image.png"
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - '50'
+    - '50'
+    - '50'
+    - '"ABS"'
+    - false
+    - '"MakerBot"'
+    - '1'
+    - '1'
+    - '3'
+    - false
+  - - '12'
+    - '2015-07-06 15:28:03.098632'
+    - '2015-07-06 15:28:03.114856'
+    - FTRD Center Cap
+    - Center cap for the face turning rhombic dodecahedron. The center is piece number
+      1. This print has been successfully printed in ABS.
+    - "/prints/12/stl.STL"
+    - "/prints/12/image.png"
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - '50'
+    - '50'
+    - '50'
+    - '"ABS"'
+    - false
+    - '"MakerBot"'
+    - '1'
+    - '1'
+    - '3'
+    - false
+  - - '13'
+    - '2015-07-06 15:59:36.662778'
+    - '2015-07-06 15:59:36.683255'
+    - Ring
+    - This is a ring.
+    - "/prints/13/stl.STL"
+    - "/prints/13/image.jpg"
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - '1'
+    - '2'
+    - '3'
+    - '"ABS"'
+    - false
+    - '"MakerBot"'
+    - '1'
+    - '1'
+    - '4'
     - false
 
 ---
@@ -288,13 +436,13 @@ users:
     - 
     - 
     - 
-    - '2'
+    - '3'
+    - '2015-07-06 15:15:16.182818'
     - '2015-07-06 14:54:44.405269'
-    - '2015-07-06 14:35:44.058629'
     - 127.0.0.1
     - 127.0.0.1
     - '2015-07-06 14:34:02.026226'
-    - '2015-07-06 14:54:44.40657'
+    - '2015-07-06 15:15:16.184934'
     - administrator
     - pizpalue
   - - '2'
@@ -312,3 +460,33 @@ users:
     - '2015-07-06 14:47:41.328028'
     - 
     - lilyc5459
+  - - '3'
+    - test@test.com
+    - "$2a$10$1tg1KyXsyy3yRJZlA7fwkeZzkkvosdaJT7Bjb/djpXnl8hmuT0xGa"
+    - 
+    - 
+    - 
+    - '1'
+    - '2015-07-06 15:23:12.195237'
+    - '2015-07-06 15:23:12.195237'
+    - 127.0.0.1
+    - 127.0.0.1
+    - '2015-07-06 15:23:12.180507'
+    - '2015-07-06 15:23:12.196868'
+    - 
+    - Modelman
+  - - '4'
+    - test@gmail.com
+    - "$2a$10$CHWAACiodWl6C.0soUHS/uX.QLbu8ZjYoWwdTiNRko9vBQ67ald7y"
+    - 
+    - 
+    - 
+    - '1'
+    - '2015-07-06 15:58:22.580458'
+    - '2015-07-06 15:58:22.580458'
+    - 127.0.0.1
+    - 127.0.0.1
+    - '2015-07-06 15:58:22.574966'
+    - '2015-07-06 15:58:22.58158'
+    - 
+    - hellojoe
