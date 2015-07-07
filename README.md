@@ -1,9 +1,10 @@
 Cholp
 =====
-This website was private property and should not be used or altered without appropriate permissions from the organization.
+This website is private property and should not be used or altered without appropriate permissions from the organization.
 
 Notes
 -------------
+- (7/6/15): Creator.number_prints doesn't seem to be accumulating prints
 - (7/7/15): Don't recommend using Didatic Gothic font because
   - Only comes in 1 weight
   - Is not a very "professional-looking" font. I'm currently using Arial for all paragraphs
@@ -19,7 +20,7 @@ Todo
   * [X] There should be no descriptions for these thumbnails
 * Updates Section
   * See Mock 1 (Homepage)
-  * [ ] Section where we can link informational pages on the site (if we want to change our terms of use, or feature a story about the site, or feature additions to functionality)
+  * [X] Section where we can link informational pages on the site (if we want to change our terms of use, or feature a story about the site, or feature additions to functionality)
   * Example: line “Additions Have Been Made to Cholp” would appear in the updates section,, user would then click on the line, would link to page with information (text) on site additions
   * [ ] We need the ability to manage the updates section, possibly through our existing featured section admin portal (cholp/featured while logged in as administrator)
     * [ ] Updates section form (within admin panel) should include 5 slots.  Each slot should have boxes to enter: a title (to be listed in the updates section and the title to the linked page) text (the paragraphs that will appear on the linked page) and date (which will appear at the bottom of each linked page)

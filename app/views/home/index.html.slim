@@ -21,9 +21,18 @@
 
   - unless @top_prints.length == 0
     .uk-width-1-4.uk-height-1-1
-      fieldset.info-box.uk-width-1-1
+      fieldset.info-box.uk-width-1-1 [style="height:400px;overflow-y:scroll;"]
         legend Updates
-        | Hello world
+        ul.uk-list.uk-list-line.uk-margin-remove
+          li
+            | 6/2: 
+            a.underline [href=""] Additions Have Been Made to Cholp
+          li
+            | 5/25: 
+            a.underline [href=""] Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          li
+            | 5/13: 
+            a.underline [href=""] Ut enim ad minim veniam, quis nostrud exercitation ullamco.
 
 .uk-grid (data-uk-grid-match data-uk-grid-margin)
   - unless @top_prints.length == 0
