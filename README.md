@@ -2,14 +2,20 @@ Cholp
 =====
 This website was private property and should not be used or altered without appropriate permissions from the organization.
 
+Notes
+-------------
+- (7/7/15): Don't recommend using Didatic Gothic font because
+  - Only comes in 1 weight
+  - Is not a very "professional-looking" font. I'm currently using Arial for all paragraphs
+
 Todo
 -------------
 **Homepage**
 * [X] Section headings (ie Top Prints, Top Creators, etc) should not be situated above their respective boxes, should be embedded between the lines (See Mock 1- Homepage)
-* [ ] Creator Thumbnails (in the Top Creators box) are wrong. See Mock 1 and compare with what is on the site now. For each thumbnail, the image should be smaller, the creator name (linked) should be pulled up higher, the number of prints they have uploaded should be listed below the name, and a short 3 line excerpt from their bio should be at the bottom of the thumbnail
+* [X] Creator Thumbnails (in the Top Creators box) are wrong. See Mock 1 and compare with what is on the site now. For each thumbnail, the image should be smaller, the creator name (linked) should be pulled up higher, the number of prints they have uploaded should be listed below the name, and a short 3 line excerpt from their bio should be at the bottom of the thumbnail
   * [X] Bio should be cut off after 3 lines (…)
 * Print Thumbnails (See Mock 5 for a good example)
-  * [ ] Images should be bigger, date that the print was uploaded should appear below the title, and the number of views should appear next to the upload date
+  * [X] Images should be bigger, date that the print was uploaded should appear below the title, and the number of views should appear next to the upload date
   * [X] There should be no descriptions for these thumbnails
 * Updates Section
   * See Mock 1 (Homepage)
@@ -21,7 +27,7 @@ Todo
 * Featured section
   * See Mock 1 (Homepage)
   * See www.ign.com for an example
-  * [ ] As we discussed in the meeting: Featured section should be scrollable. Should include graphics with linked text laid over.  Side bar snapped to the right side of the box should include title tiles which can be used to navigate between the different featured slots. 
+  * [X] As we discussed in the meeting: Featured section should be scrollable. Should include graphics with linked text laid over.  Side bar snapped to the right side of the box should include title tiles which can be used to navigate between the different featured slots. 
   * [ ] We need the ability to manage the featured section, again, possibly through modifying our existing featured section admin portal (cholp/featured while logged in as administrator)
     * [ ] A small form with 5 possible slots. each slot consists of spaces to enter: a title for the tile, main title (overlaid over graphic), and link (which clicking on the main title will link to) as well as place to upload a graphic
     * See Mock 8

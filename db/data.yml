@@ -17,50 +17,53 @@ creators:
   records: 
   - - '1'
     - '2015-07-06 14:35:58.932782'
-    - '2015-07-06 14:45:13.768991'
+    - '2015-07-06 16:40:35.666276'
     - true
     - pizpalue
     - 
     - "/creators/pizpalue/icon.jpg"
-    - ''
+    - For all your puzzling needs.
     - 
-    - 
+    - '3'
     - 
     - '1'
   - - '2'
     - '2015-07-06 14:47:45.131343'
-    - '2015-07-06 14:47:55.773447'
+    - '2015-07-06 16:42:33.443861'
     - true
     - lilyc5459
     - 
     - "/creators/lilyc5459/icon.jpg"
-    - ''
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam blandit velit id
+      justo porttitor hendrerit. Nulla eget erat scelerisque libero malesuada feugiat
+      rhoncus eget felis.
     - 
-    - 
+    - '5'
     - 
     - '2'
   - - '3'
     - '2015-07-06 15:23:16.872837'
-    - '2015-07-06 15:30:47.340754'
+    - '2015-07-06 16:43:58.567163'
     - true
     - Modelman
     - 
     - "/creators/Modelman/icon.jpg"
-    - ''
+    - From models to tools, I'm your man.
     - 
-    - 
+    - '4'
     - 
     - '3'
   - - '4'
     - '2015-07-06 15:58:30.848545'
-    - '2015-07-06 16:02:07.191654'
+    - '2015-07-06 16:28:34.882555'
     - true
     - hellojoe
     - 
     - "/creators/hellojoe/icon.jpg"
-    - ''
+    - Fixing things is my life fixing things avoiding strife fixing things I do a
+      lot using tools printed on maker bot.
     - 
-    - 
+    - '1'
     - 
     - '4'
 
@@ -167,7 +170,7 @@ prints:
     - true
   - - '4'
     - '2015-07-06 14:51:18.673201'
-    - '2015-07-06 14:51:18.689265'
+    - '2015-07-06 16:10:43.408564'
     - Black Checker Piece
     - Black checker piece that must be dyed or must be printed in colored plastic.
     - "/prints/4/stl.STL"
@@ -177,7 +180,7 @@ prints:
     - 
     - 
     - 
-    - 
+    - '1'
     - 
     - '65'
     - '65'
@@ -191,7 +194,7 @@ prints:
     - false
   - - '5'
     - '2015-07-06 14:52:20.48348'
-    - '2015-07-06 14:52:20.503942'
+    - '2015-07-06 16:41:31.922602'
     - Red Checker Piece
     - Red checker piece that must be dyed or must be printed in colored plastic.
     - "/prints/5/stl.STL"
@@ -212,10 +215,10 @@ prints:
     - '1'
     - '1'
     - '2'
-    - false
+    - true
   - - '6'
     - '2015-07-06 14:53:22.330802'
-    - '2015-07-06 14:53:22.354032'
+    - '2015-07-06 16:10:54.008647'
     - Black Checker Board
     - Black checker board that must be dyed or must be printed in colored plastic.
     - "/prints/6/stl.STL"
@@ -225,7 +228,7 @@ prints:
     - 
     - 
     - 
-    - 
+    - '1'
     - 
     - '75'
     - '75'
@@ -264,7 +267,7 @@ prints:
     - true
   - - '8'
     - '2015-07-06 14:56:49.501973'
-    - '2015-07-06 14:57:13.796935'
+    - '2015-07-06 16:10:51.720673'
     - Baja Car
     - Scale model of the Cornell University baja racing car used for wind tunnel analysis.
     - "/prints/8/stl.STL"
@@ -274,7 +277,7 @@ prints:
     - 
     - 
     - 
-    - 
+    - '1'
     - 
     - '89'
     - '95'
@@ -288,7 +291,7 @@ prints:
     - true
   - - '9'
     - '2015-07-06 15:24:04.752234'
-    - '2015-07-06 16:05:34.275312'
+    - '2015-07-06 21:29:06.258271'
     - Dice Set Base
     - A collection of dice of different sizes and sides. You wold have to carve or
       mark the numbers if you choose to print them.
@@ -299,7 +302,7 @@ prints:
     - 
     - 
     - 
-    - '1'
+    - '2'
     - 
     - '10'
     - '10'
@@ -313,7 +316,7 @@ prints:
     - true
   - - '10'
     - '2015-07-06 15:26:43.637219'
-    - '2015-07-06 15:26:43.669186'
+    - '2015-07-06 16:10:49.339538'
     - FTRD
     - 'Prints out the pieces needed to make a face turning rhombic dodecahedron puzzle.
       You will need the hardware: screws and springs.'
@@ -324,7 +327,7 @@ prints:
     - 
     - 
     - 
-    - 
+    - '1'
     - 
     - '15'
     - '15'
@@ -436,13 +439,13 @@ users:
     - 
     - 
     - 
-    - '3'
-    - '2015-07-06 15:15:16.182818'
-    - '2015-07-06 14:54:44.405269'
+    - '5'
+    - '2015-07-06 16:44:26.196144'
+    - '2015-07-06 16:40:22.959192'
     - 127.0.0.1
     - 127.0.0.1
     - '2015-07-06 14:34:02.026226'
-    - '2015-07-06 15:15:16.184934'
+    - '2015-07-06 16:44:26.197245'
     - administrator
     - pizpalue
   - - '2'
@@ -451,13 +454,13 @@ users:
     - 
     - 
     - 
-    - '1'
-    - '2015-07-06 14:47:41.327212'
+    - '2'
+    - '2015-07-06 16:40:56.452764'
     - '2015-07-06 14:47:41.327212'
     - 127.0.0.1
     - 127.0.0.1
     - '2015-07-06 14:47:41.314085'
-    - '2015-07-06 14:47:41.328028'
+    - '2015-07-06 16:40:56.454008'
     - 
     - lilyc5459
   - - '3'
@@ -466,13 +469,13 @@ users:
     - 
     - 
     - 
-    - '1'
-    - '2015-07-06 15:23:12.195237'
+    - '2'
+    - '2015-07-06 16:43:48.191685'
     - '2015-07-06 15:23:12.195237'
     - 127.0.0.1
     - 127.0.0.1
     - '2015-07-06 15:23:12.180507'
-    - '2015-07-06 15:23:12.196868'
+    - '2015-07-06 16:43:48.192686'
     - 
     - Modelman
   - - '4'
