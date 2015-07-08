@@ -90,8 +90,17 @@ input[type="color"] {
   }
 }
 
-.btn-green {
+label {
+  cursor: pointer;
+}
+
+[class*="btn-"] {
   @extend .uk-button;
+  padding: 0 25px !important;
+  font-weight: 700 !important;
+}
+
+[class*="btn-green"] {
   background-color: $cholp-green;
   color: $white;
 
@@ -100,6 +109,21 @@ input[type="color"] {
     background-color: $cholp-green-dark;
     color: $white;
   }
+}
+
+[class*="btn-blue"] {
+  background-color: $cholp-blue-light;
+  color: $cholp-blue-dark;
+
+  &:hover,
+  &:focus {
+    background-color: $cholp-blue;
+    color: $white;
+  }
+}
+
+[class*="--round"] {
+  border-radius: 3px !important;
 }
 
 .container {
@@ -115,8 +139,10 @@ input[type="color"] {
   text-align: center;
 
   li { 
-    display: inline;
-    margin: 10px;
+    @include min-query($breakpoint-small) {
+      display: inline;
+      margin: 10px;
+    }
   }
 }
 

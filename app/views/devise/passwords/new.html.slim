@@ -1,11 +1,18 @@
-h2
-  | Forgot your password?
-= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-  = devise_error_messages!
-  div
-    = f.label :username
-    br
-    = f.email_field :username, autofocus: true
-  div
-    = f.submit "Send me reset password instructions"
-= render "devise/shared/links"
+.uk-width-medium-3-5.uk-width-large-2-5.uk-container-center.uk-margin-large-top
+  fieldset.info-box
+    legend Forgot your password?
+    = form_for(resource, as: resource_name, url: password_path(resource_name), html: {method: :post, :class => "uk-form uk-form-stacked"}) do |f|
+      = devise_error_messages!
+
+      .uk-form-row
+        label.uk-form-label[for="username"] Username
+        .uk-form-controls
+          = f.email_field :username, autofocus: true, :id => "username", :class => "uk-form-large uk-width-1-1"
+
+      .uk-form-row.uk-text-right
+        = f.submit "Reset password", :id => "submit", :class => "uk-button"
+  
+  br
+
+  .uk-width-1-1.uk-text-center
+    = render "devise/shared/links"

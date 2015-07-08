@@ -1,16 +1,24 @@
-h2
-  | Change your password
-= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
-  = devise_error_messages!
-  = f.hidden_field :reset_password_token
-  div
-    = f.label :password, "New password"
-    br
-    = f.password_field :password, autofocus: true, autocomplete: "off"
-  div
-    = f.label :password_confirmation, "Confirm new password"
-    br
-    = f.password_field :password_confirmation, autocomplete: "off"
-  div
-    = f.submit "Change my password"
-= render "devise/shared/links"
+.uk-width-medium-3-5.uk-width-large-2-5.uk-container-center.uk-margin-large-top
+  fieldset.info-box
+    legend Change your password
+    = form_for(resource, as: resource_name, url: password_path(resource_name), html: {method: :put, :class => "uk-form uk-form-stacked"}) do |f|
+      = devise_error_messages!
+      = f.hidden_field :reset_password_token
+
+      .uk-form-row
+        label.uk-form-label[for="password1"] New password
+        .uk-form-controls
+          = f.password_field :password, autofocus: true, autocomplete: "off", :id => "password1", :class => "uk-form-large uk-width-1-1"
+
+      .uk-form-row
+        label.uk-form-label[for="password2"] Confirm new password
+        .uk-form-controls
+          = f.password_field :password_confirmation, autocomplete: "off", :id => "password2", :class => "uk-form-large uk-width-1-1"
+
+      .uk-form-row.uk-text-right
+        = f.submit "Change password", :id => "submit", :class => "uk-button"
+  
+  br
+
+  .uk-width-1-1.uk-text-center
+    = render "devise/shared/links"

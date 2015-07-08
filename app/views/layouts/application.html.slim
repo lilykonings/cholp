@@ -18,13 +18,13 @@ html
           ul.uk-navbar-nav
             - if signed_in?
               li
-                = link_to current_user.username, '/users/edit', class: 'uk-button'
+                = link_to current_user.username, '/users/edit', class: 'btn-blue'
               li
                 = link_to 'Logout', destroy_user_session_path,
                 method: :delete, class: 'uk-button'
             - else
               li
-                = link_to 'Signup', new_user_registration_path, class: 'btn-green'
+                = link_to 'Signup', new_user_registration_path, class: 'btn-blue'
               li
                 = link_to 'Login', new_user_session_path, class: 'uk-button'
 

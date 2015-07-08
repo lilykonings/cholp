@@ -1,4 +1,4 @@
-.uk-width-medium-3-5.uk-width-large-2-5.uk-container-center.uk-margin-large-top
+.uk-width-medium-3-5.uk-width-large-2-5.uk-container-center.uk-margin-large-top.uk-margin-large-bottom
   fieldset.info-box
     legend Signup
     = form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => "uk-form uk-form-stacked"}) do |f|
@@ -15,17 +15,17 @@
           = f.text_field :email, :id => "email", :class => "uk-form-large uk-width-1-1"
 
       .uk-form-row
-        label.uk-form-label[for="password"] Password
+        label.uk-form-label[for="password1"] Password
         .uk-form-controls
-          = f.password_field :password, autocomplete: "off", :id => "password", :class => "uk-form-large uk-width-1-1", :placeholder => "8 characters minimum"
+          = f.password_field :password, autocomplete: "off", :id => "password1", :class => "uk-form-large uk-width-1-1", :placeholder => "8 characters minimum"
 
       .uk-form-row
-        label.uk-form-label[for="password"] Confirm Password
+        label.uk-form-label[for="password2"] Confirm Password
         .uk-form-controls
-          = f.password_field :password, autocomplete: "off", :id => "password", :class => "uk-form-large uk-width-1-1"
+          = f.password_field :password, autocomplete: "off", :id => "password2", :class => "uk-form-large uk-width-1-1"
 
       .uk-form-row.uk-text-right
-        = f.submit "Signup", :id => "submit", :class => "uk-button"
+        = f.submit "Signup", :id => "submit", :class => "btn-green--round uk-button-large"
   
   br
 

@@ -1,4 +1,4 @@
-.uk-width-medium-3-5.uk-width-large-2-5.uk-container-center.uk-margin-large-top
+.uk-width-medium-3-5.uk-width-large-2-5.uk-container-center.uk-margin-large-top.uk-margin-large-bottom
   fieldset.info-box
     legend Login
     = form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => "uk-form uk-form-stacked"}) do |f|
@@ -20,7 +20,7 @@
             |  Remember me
 
       .uk-form-row.uk-text-center
-        = f.submit "Login", :id => "submit", :class => "uk-button"
+        = f.submit "Login", :id => "submit", :class => "btn-green--round uk-button-large"
   
   br
 
