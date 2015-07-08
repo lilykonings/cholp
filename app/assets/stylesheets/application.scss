@@ -124,6 +124,11 @@ main {
     li {
       border-top: 1px solid $cholp-green-light;
       padding: 10px 25px;
+      background-color: $white;
+
+      &:hover {
+        background-color: $cholp-green-light;
+      }
     }
 
     a:first-child li {

@@ -90,6 +90,12 @@ input[type="color"] {
   }
 }
 
+input[type="upload"] {
+  &:focus {
+    outline: 0;
+  }
+}
+
 label {
   cursor: pointer;
   font-weight: 700;

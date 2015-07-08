@@ -1,54 +1,98 @@
-= render "dashboard/sidebar"
-.col-80
-    .box-wrapper
-        h2 Upload
-        .box
-            = form_tag('/prints/new', multipart: true, id: 'edit-form') do
+.uk-grid
+  = render "dashboard/sidebar"
+  .uk-width-3-4
+    fieldset.info-box
+      legend Upload
+      = form_tag('/prints/new', multipart: true, id: 'edit-form', :class => "uk-form uk-form-stacked") do
 
-              .left.clear
-                = text_field_tag :name, '', placeholder: 'name', class: 'rounded'
-                = text_area :p, :description, placeholder: 'description', class: 'rounded'
-                = file_field_tag 'stl', class: 'upload'
-                = file_field_tag 'image', class: 'upload'
-                .spacing-10
+        .uk-grid
+          .uk-width-1-2
+            .uk-form-row
+              label.uk-form-label[for="name"] Name
+              .uk-form-controls
+                = text_field_tag :name, '', autofocus: true, :id => "name", :class => "uk-form-large uk-width-1-1"
 
-                p additional images (optional):
+            .uk-form-row
+              label.uk-form-label[for="description"] Description
+              .uk-form-controls
+                = text_area :p, :description, autofocus: true, :id => "description", :class => "uk-form-large uk-width-1-1"
+
+            .uk-form-row
+              label.uk-form-label[for="stl"] STL file
+              .uk-form-controls
+                = file_field_tag 'stl'
+
+            .uk-form-row
+              label.uk-form-label[for="stl"] Image
+              .uk-form-controls
+                = file_field_tag 'image'
+
+            .uk-form-row
+              label.uk-form-label[for="stl"] Additional images (optional)
+              .uk-form-controls
                 = file_field_tag 'image1', class: 'upload'
+
+            .uk-form-row
+              .uk-form-controls
                 = file_field_tag 'image2', class: 'upload'
+
+            .uk-form-row
+              .uk-form-controls
                 = file_field_tag 'image3', class: 'upload'
+
+            .uk-form-row
+              .uk-form-controls
                 = file_field_tag 'image4', class: 'upload'
+
+            .uk-form-row
+              .uk-form-controls
                 = file_field_tag 'image5', class: 'upload'
-                .spacing-10
 
-              .right
-                p minimum dimensions (mm):
-                .block
-                  = number_field_tag :x, nil, in: 0..500, step: 1, placeholder: 'X', class: 'rounded'
-                  = number_field_tag :y, nil, in: 0..500, step: 1, placeholder: 'Y', class: 'rounded'
-                  = number_field_tag :z, nil, in: 0..500, step: 1, placeholder: 'Z', class: 'rounded'
-                .spacing-40
+          .uk-width-1-2
+            .uk-form-row
+              label.uk-form-label Minimum dimensions (mm)
+              .uk-form-controls
+                .uk-grid.uk-grid-small
+                  .uk-width-1-3
+                    = number_field_tag :x, nil, in: 0..500, step: 1, placeholder: 'X', :class => "uk-width-1-1"
+                  .uk-width-1-3
+                    = number_field_tag :y, nil, in: 0..500, step: 1, placeholder: 'Y', :class => "uk-width-1-1"
+                  .uk-width-1-3
+                    = number_field_tag :z, nil, in: 0..500, step: 1, placeholder: 'Z', :class => "uk-width-1-1"
 
-                p print materials:
-                = select_tag :materials, options_for_select(@materials), multiple: true, class: 'rounded'
-                .spacing-5
+            .uk-form-row
+              label.uk-form-label Print materials
+              .uk-form-controls
+                = select_tag :materials, options_for_select(@materials), multiple: true, :class => "uk-width-1-1"
 
-                p supports color?
-                = radio_button 'p', 'color_supported', 'true'
-                = label_tag 'p', 'yes'
-                = radio_button 'p', 'color_supported', 'false'
-                = label_tag 'p', 'no'
-                .spacing-2
+            .uk-form-row
+              label.uk-form-label Supports color?
+              .uk-form-controls
+                .uk-grid
+                  .uk-width-1-2
+                    label.uk-form-label
+                      = radio_button 'p', 'color_supported', 'true'
+                      |  Yes
+                  .uk-width-1-2
+                    label.uk-form-label
+                      = radio_button 'p', 'color_supported', 'false'
+                      |  No
 
-                p recommended printers:
-                = select_tag :printers, options_for_select(@printers), multiple: true, class: 'rounded'
-                .spacing-5
+            .uk-form-row
+              label.uk-form-label Recommended printers
+              .uk-form-controls
+                = select_tag :printers, options_for_select(@printers), multiple: true, :class => "uk-width-1-1"
 
-                = number_field_tag :resolution, nil, in: 0..500, step: 1,
-                placeholder: 'resolution (mm)', class: 'rounded'
-                = number_field_tag :tolerance, nil, in: 0..500, step: 1,
-                placeholder: 'tolerance (mm)', class: 'rounded'
-                .spacing-20
+            .uk-form-row
+              label.uk-form-label Resolution (mm)
+              .uk-form-controls
+                = number_field_tag :resolution, nil, in: 0..500, step: 1, :class => "uk-width-1-1"
 
-                = submit_tag 'upload', class: 'submit'
+            .uk-form-row
+              label.uk-form-label Tolerance (mm)
+              .uk-form-controls
+                = number_field_tag :tolerance, nil, in: 0..500, step: 1, :class => "uk-width-1-1"
 
-            .clear
+        .uk-grid
+          .uk-width-1-1.uk-text-center
+            = submit_tag 'upload', class: 'btn-green--round uk-button-large'

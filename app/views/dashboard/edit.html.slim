@@ -1,38 +1,41 @@
-= render "dashboard/sidebar"
-.col-80
-  .box-wrapper
-    h2 Info
-    .box
-      = form_tag('/dashboard/save', multipart: true) do
-          / = text_field_tag :name, @c.name, placeholder: 'no name provided', class: 'rounded', disabled: true
-          label Description
-          = text_area :c, :description, class: 'rounded'
-          .spacing-20
-          / = file_field_tag 'banner', class: 'upload'
-          = file_field_tag 'icon', class: 'upload'
+.uk-grid
+  = render "dashboard/sidebar"
+  .uk-width-3-4
+    fieldset.info-box
+      legend Edit profile
+      = form_tag('/dashboard/save', multipart: true, :class => "uk-form uk-form-horizontal") do
 
-          
+        .uk-form-row
+          label.uk-form-label[for="description"] Upload icon
+          .uk-form-controls
+            .uk-grid
+              .uk-width-1-2
+                = file_field_tag 'icon'
+              .uk-width-1-2.uk-text-right
+                - unless @c.icon.nil?
+                  = link_to 'Remove current icon', '/dashboard/remove_icon',
+                  method: :post
+        
+        .uk-form-row
+          label.uk-form-label[for="description"] Description
+          .uk-form-controls
+            = text_area :c, :description, :id => "description", :class => "uk-width-1-1", :rows => 5
+        
+        .uk-form-row
+          .uk-form-controls.uk-text-right
+            = submit_tag "Save", :id => "submit", :class => "uk-button uk-button--round uk-button-large"
 
-          /- unless @c.banner.nil?
-          /  = link_to 'remove current banner', '/dashboard/remove_banner',
-          /  method: :post
-
-          - unless @c.icon.nil?
-            = link_to 'remove current icon', '/dashboard/remove_icon',
-            method: :post
-          .spacing-10
-
-          = submit_tag 'save', class: "submit"
-  .spacing-20
-  .box-wrapper
-    h2 Featured Prints
-    .box
-      - @featured_prints.each do |p|
-        div
-          = link_to p.name, "p/#{p.id}"
-          = link_to "Remove", "/dashboard/remove_feature/#{p.id}", class: "right"
-        .spacing-20
+    fieldset.info-box.uk-margin-top
+      legend Featured prints
+      ul.uk-list.uk-list-line.uk-list-space.uk-margin-remove
+        - @featured_prints.each do |p|
+          li
+            .uk-grid
+              .uk-width-1-2.uk-text-bold = link_to p.name, "p/#{p.id}"
+              .uk-width-1-2.uk-text-right = link_to "Remove", "/dashboard/remove_feature/#{p.id}"
       - unless @unfeatured_prints.length == 0
-        = form_tag('/dashboard/add_feature', multipart: true, id: 'edit-form') do
-          = select_tag "new_feature", options_from_collection_for_select(@unfeatured_prints, "id", "name")
-          = submit_tag 'Add', class: "submit"
+        = form_tag('/dashboard/add_feature', multipart: true, id: 'edit-form', :class => "uk-form") do
+
+          .uk-form-row.uk-margin-top
+            = select_tag "new_feature", options_from_collection_for_select(@unfeatured_prints, "id", "name")
+            = submit_tag 'Add', class: "uk-button uk-button--round uk-margin-left"

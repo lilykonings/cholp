@@ -1,14 +1,18 @@
-= render "dashboard/sidebar"
-.col-80
-	.box-wrapper
-		h2 My Uploaded Prints
-		.box
-			- if @prints.length == 0
-				p
-					| Sorry, you have uploaded no prints..
-			- @prints.each do |p|
-				div
-				  = link_to p.name, "/p/#{p.id}"
-				  = link_to 'Delete', "/p/#{p.id}/delete", class: "right"
-				  = link_to 'Edit', "/p/#{p.id}/edit", class: "right margin-right"
-				.spacing-20
+.uk-grid
+  = render "dashboard/sidebar"
+  .uk-width-3-4
+    fieldset.info-box
+      legend Manage prints
+      - if @prints.length == 0
+        p Sorry, you have no uploaded prints...
+      - else
+        ul.uk-list.uk-list-line.uk-list-space.uk-margin-remove
+          - @prints.each do |p|
+            li
+              .uk-grid
+                .uk-width-1-2.uk-text-bold
+                  = link_to p.name, "/p/#{p.id}"
+                .uk-width-1-2.uk-text-right
+                  = link_to 'Edit', "/p/#{p.id}/edit"
+                  span.uk-text-muted  | 
+                  = link_to 'Delete', "/p/#{p.id}/delete"
