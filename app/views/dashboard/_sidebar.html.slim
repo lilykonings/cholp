@@ -1,4 +1,10 @@
-.col-20
-    = link_to "Settings", edit_user_registration_path, class: 'db-button'
-    / = link_to 'Subscriptions', '/dashboard/subscriptions', class: 'db-button'
-    = link_to 'Manage Prints', '/dashboard/manage', class: 'db-button'
+.uk-width-1-4
+  a.btn-green--round.uk-button-large.uk-width-1-1.uk-margin-bottom[href="/dashboard/upload"] Upload
+  .dashboard_nav
+    ul
+      a[href="#{edit_user_registration_path}"]
+        li Account settings
+      a[href="/dashboard/subscriptions"]
+        li Subscriptions
+      a[href="/dashboard/manage"]
+        li Manage prints
