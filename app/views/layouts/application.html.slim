@@ -3,7 +3,7 @@ html
   head
     title Cholp
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag "galleria/galleria.js"
+    / = javascript_include_tag "galleria/galleria.js"
     = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
@@ -11,8 +11,8 @@ html
   body
     header.uk-navbar
       .container
-        a.uk-navbar-brand [href="/"]
-          img.uk-height-1-1 [src=(asset_path 'logo.png')]
+        a.uk-navbar-brand[href="/"]
+          img.uk-height-1-1[src=(asset_path 'logo.png')]
 
         .uk-navbar-flip
           ul.uk-navbar-nav
@@ -24,35 +24,40 @@ html
                 method: :delete, class: 'uk-button'
             - else
               li
-                = link_to 'Signup', new_user_registration_path, class: 'uk-button'
+                = link_to 'Signup', new_user_registration_path, class: 'btn-green'
               li
                 = link_to 'Login', new_user_session_path, class: 'uk-button'
 
         .uk-navbar-content
-          form.uk-display-inline-block.uk-height-1-1 [action="/search"]
-            input#search.uk-height-1-1 [name="q" placeholder="Search" value=params[:q]]
+          form.uk-display-inline-block.uk-height-1-1[action="/search"]
+            input#search.uk-height-1-1.uk-width-1-1[name="q" placeholder="Search" value=params[:q]]
 
-    main.container == yield
+    main.container
+      - if notice
+        .uk-alert.uk-text-center = notice
+      - if alert
+        .uk-alert.uk-alert-danger.uk-text-center = alert
+      == yield
 
     footer
       .container.uk-text-center
         ul.inline-list.uk-margin-bottom
           li
-            a#privacy [href="/assets/cholp_privacy_policy.docx"] Privacy Policy
+            a#privacy[href="/assets/cholp_privacy_policy.docx"] Privacy Policy
           li
-            a#terms [href="/assets/cholp_terms/of_use.docx"] Terms of Agreement
+            a#terms[href="/assets/cholp_terms/of_use.docx"] Terms of Agreement
           li
-            a#contact [href="/contact"] Contact Us
+            a#contact[href="/contact"] Contact Us
         #copyright &copy Cholp 2015
   
   script
-    | Galleria.loadTheme('/assets/galleria/themes/classic/galleria.classic.min.js');
-      / #social-buttons
-      / a [href="https://www.facebook.com/"]
-      /   img.social [src=(asset_path 'facebook128.png')]
-      / a [href="https://twitter.com/?lang=en"]
-      /   img.social [src=(asset_path 'twitter128.png')]
-      / a [href="https://www.linkedin.com/"]
-      /   img.social [src=(asset_path 'linkedin128.png')]
-      / a [href="https://plus.google.com/"]
-      /   img.social [src=(asset_path 'google_plus128.png')]
+    / | Galleria.loadTheme('/assets/galleria/themes/classic/galleria.classic.min.js');
+      // #social-buttons
+      // a[href="https://www.facebook.com/"]
+      //   img.social[src=(asset_path 'facebook128.png')]
+      // a[href="https://twitter.com/?lang=en"]
+      //   img.social[src=(asset_path 'twitter128.png')]
+      // a[href="https://www.linkedin.com/"]
+      //   img.social[src=(asset_path 'linkedin128.png')]
+      // a[href="https://plus.google.com/"]
+      //   img.social[src=(asset_path 'google_plus128.png')]

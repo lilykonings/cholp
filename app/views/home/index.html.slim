@@ -1,6 +1,6 @@
 .uk-grid (data-uk-grid-match data-uk-grid-margin)
   - unless @top_prints.length == 0
-    .uk-width-3-4.uk-height-1-1
+    .uk-width-medium-2-3.uk-width-large-3-4.uk-height-1-1
       #slider_container.slider_container
         .slides_main [u="slides"]
           - @featured_prints.each do |f|
@@ -20,8 +20,8 @@
                   .uk-vertical-align-middle [u="thumbnailtemplate"]
 
   - unless @top_prints.length == 0
-    .uk-width-1-4.uk-height-1-1
-      fieldset.info-box.uk-width-1-1 [style="height:400px;overflow-y:scroll;"]
+    .uk-width-medium-1-3.uk-width-large-1-4.uk-height-1-1
+      fieldset.info-box--updates.uk-width-1-1.uk-height-1-1
         legend Updates
         ul.uk-list.uk-list-line.uk-margin-remove
           li
@@ -36,15 +36,15 @@
 
 .uk-grid (data-uk-grid-match data-uk-grid-margin)
   - unless @top_prints.length == 0
-    .uk-width-3-4.uk-height-1-1
+    .uk-width-medium-2-3.uk-width-large-3-4.uk-height-1-1
       fieldset.info-box.uk-width-1-1
         legend Top Prints
         .uk-grid (data-uk-grid-margin)
           - @top_prints.each do |p|
-            dl.uk-width-medium-1-2.uk-width-large-1-3
+            dl.uk-width-1-2.uk-width-small-1-3.uk-width-medium-1-2.uk-width-large-1-3
               dt
                 a [href="p/#{p.id}"]
-                  .grid_img [style="background-image: url('#{p.picture_zero}');height:150px;"]
+                  .grid_img.uk-margin-small-bottom [style="background-image: url('#{p.picture_zero}');height:150px;"]
                 a.grid_name [href="p/#{p.id}"] = p.name
                 .uk-grid
                   .grid_meta.uk-width-1-2
@@ -57,13 +57,13 @@
                     |  views
 
   - unless @top_prints.length == 0
-    .uk-width-1-4.uk-height-1-1
+    .uk-width-medium-1-3.uk-width-large-1-4.uk-height-1-1
       fieldset.info-box.uk-width-1-1
         legend Top Creators
         .uk-grid.uk-grid-medium (data-uk-grid-margin)
           - @top_creators.each do |c|
             - unless c.icon.nil?
-              .uk-width-1-1
+              .uk-width-1-2.uk-width-medium-1-1
                 .uk-grid.uk-grid-small
                   .uk-width-1-3
                     a.grid_img [href="/#{c.name}"]

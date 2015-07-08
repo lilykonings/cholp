@@ -1,5 +1,6 @@
-.form-container--single.uk-width-3-5.uk-width-medium-1-4.uk-container-center
-  .uk-vertical-align-middle.uk-width-1-1
+.uk-width-medium-3-5.uk-width-large-2-5.uk-container-center.uk-margin-large-top
+  fieldset.info-box
+    legend Login
     = form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => "uk-form uk-form-stacked"}) do |f|
 
       .uk-form-row
@@ -10,7 +11,7 @@
       .uk-form-row
         label.uk-form-label[for="password"] Password
         .uk-form-controls
-          = f.text_field :password, autocomplete: "off", :id => "password", :class => "uk-form-large uk-width-1-1"
+          = f.password_field :password, autocomplete: "off", :id => "password", :class => "uk-form-large uk-width-1-1"
 
       - if devise_mapping.rememberable?
         .uk-form-row
@@ -19,10 +20,9 @@
             |  Remember me
 
       .uk-form-row.uk-text-center
-        = f.submit "log in", :id => "submit", :class => "uk-button"
+        = f.submit "Login", :id => "submit", :class => "uk-button"
   
-    br
-    hr
-    
-    .uk-text-center
-      = render "devise/shared/links"
+  br
+
+  .uk-width-1-1.uk-text-center
+    = render "devise/shared/links"

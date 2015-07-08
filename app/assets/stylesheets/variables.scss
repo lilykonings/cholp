@@ -1,0 +1,29 @@
+// $base-font-family:  "Didact Gothic", sans-serif;
+$base-font-family:  "Open Sans", sans-serif;
+$sec-font-family:   "Arial", sans-serif;
+$base-font-size:    14px;
+$small-font-size:   $base-font-size * 0.875;
+$base-line-height:  1.4;
+
+$spacing-unit:      30px;
+
+$white:             #FFFFFF;
+$black:             #000000;
+
+$text-color:        $black;
+$bg-color:          #FDFEFA;
+$grey-color:        #8B8C8E;
+$grey-color-light:  #DCDCDA;
+
+$cholp-green:       #9BBB59;
+$cholp-green-light: lighten($cholp-green, 40%);
+$cholp-green-dark:  darken($cholp-green, 10%);
+
+$cholp-blue:        #095296;
+$cholp-blue-light:  #9BB5D5;
+$cholp-blue-dark:   darken($cholp-blue, 10%);
+
+$content-width:     1000px;
+$on-small:          480px;
+$on-medium:         768px;
+$on-large:          960px;

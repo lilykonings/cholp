@@ -1,0 +1,120 @@
+@import "base.scss";
+@import "slider.scss";
+@import "forms.scss";
+
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: $bg-color;
+}
+
+header {
+  padding: 15px 0;
+  background-color: $bg-color;
+
+  .uk-navbar-brand {
+    padding: 0;
+  }
+
+  #search {
+    // width: 500px;
+    // border-radius: 7px;
+  }
+
+  li {
+    .uk-button {
+      // background-color: $cholp-blue-light;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+
+      &:hover,
+      &:focus {
+        // background-color: $cholp-blue;
+      }
+    }
+
+    &:first-child .uk-button {
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+    }
+
+    &:last-child .uk-button {
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+  }
+}
+
+main {
+  margin: 0 auto;
+  padding: 25px 0;
+}
+
+// FIELDSET BOX
+[class*="info-box"] {
+  box-sizing: border-box;
+  border: 1px solid $cholp-green-light;
+  padding: 20px 25px;
+  margin: 0;
+  background-color: $white;
+
+  legend {
+    font-size: 16px;
+    color: $grey-color;
+    font-weight: 700;
+  }
+}
+
+.info-box--updates {
+  @include min-query($breakpoint-large) {
+    height: 400px;
+  }
+
+  overflow-y: scroll;
+}
+
+// GRID INFO
+.grid_name {
+  font-weight: 700;
+}
+
+.grid_img {
+  width: 100%;
+  @include fullbg;
+}
+
+.grid_meta {
+  font-family: $sec-font-family;
+  font-style: italic;
+  font-size: $small-font-size;
+}
+
+.grid_desc {
+  @include ellipsis(3, 12px, $base-line-height);
+  color: $grey-color;
+}
+
+// OVERLAY INFO
+.uk-overlay-panel {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.overlay_title {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+footer {
+  padding: 25px 0;
+  background-color: $cholp-green;
+  
+    a {
+      font-weight: 700;
+    }
+}

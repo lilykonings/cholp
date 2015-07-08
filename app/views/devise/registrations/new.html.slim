@@ -1,19 +1,33 @@
-#form
-  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-    = devise_error_messages!
+.uk-width-medium-3-5.uk-width-large-2-5.uk-container-center.uk-margin-large-top
+  fieldset.info-box
+    legend Signup
+    = form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => "uk-form uk-form-stacked"}) do |f|
+      = devise_error_messages!
 
-    #field-row
-      = f.text_field :username, autofocus: true,
-      :placeholder => "username", :class => "field rounded"
-      = f.email_field :email,
-      :placeholder => "email", :class => "field rounded"
+      .uk-form-row
+        label.uk-form-label[for="username"] Username
+        .uk-form-controls
+          = f.text_field :username, autofocus: true, :id => "username", :class => "uk-form-large uk-width-1-1"
 
-    #field-row
-      = f.password_field :password, autocomplete: "off",
-      :placeholder => "8 characters minimum",
-      :class => "field rounded"
-    #field-row
-      = f.password_field :password_confirmation, autocomplete: "off",
-      :placeholder => "confirm password", :class => "field rounded"
+      .uk-form-row
+        label.uk-form-label[for="email"] Email
+        .uk-form-controls
+          = f.text_field :email, :id => "email", :class => "uk-form-large uk-width-1-1"
 
-    = f.submit "Sign up", :id => "submit", :class => "rounded"
+      .uk-form-row
+        label.uk-form-label[for="password"] Password
+        .uk-form-controls
+          = f.password_field :password, autocomplete: "off", :id => "password", :class => "uk-form-large uk-width-1-1", :placeholder => "8 characters minimum"
+
+      .uk-form-row
+        label.uk-form-label[for="password"] Confirm Password
+        .uk-form-controls
+          = f.password_field :password, autocomplete: "off", :id => "password", :class => "uk-form-large uk-width-1-1"
+
+      .uk-form-row.uk-text-right
+        = f.submit "Signup", :id => "submit", :class => "uk-button"
+  
+  br
+
+  .uk-width-1-1.uk-text-center
+    = render "devise/shared/links"

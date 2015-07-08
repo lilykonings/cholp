@@ -1,0 +1,144 @@
+// MEDIA QUERIES
+@mixin min-query($device) {
+  @media screen and (min-width: $device) {
+    @content;
+  }
+}
+
+@mixin max-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+@mixin transition($type) {
+  transition: $type 0.2s ease-in-out;
+  -moz-transition: $type 0.2s ease-in-out;
+  -webkit-transition: $type 0.2s ease-in-out;
+}
+
+// UTILITIES
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: $bg-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+}
+
+header,
+footer {
+  z-index: 100;
+}
+
+main {
+  flex: 1;
+  height: 100%;
+}
+
+a {
+  color: $cholp-blue;
+  text-decoration: none;
+
+  &:focus,
+  &:hover {
+    color: $cholp-blue;
+    text-decoration: none;
+  }
+
+  &.underline {
+    text-decoration: underline;
+    text-decoration-color: $cholp-blue;
+  }
+}
+
+p {
+  font-family: $sec-font-family;
+  line-height: $base-line-height;
+}
+
+select,
+textarea,
+input:not([type]),
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+  border: 1px solid $grey-color-light;
+  border-radius: 3px;
+  padding: 0 1em;
+  font-size: $base-font-size;
+
+  &:focus {
+    border: 1px solid $grey-color;
+    outline: 0;
+  }
+}
+
+.btn-green {
+  @extend .uk-button;
+  background-color: $cholp-green;
+  color: $white;
+
+  &:hover,
+  &:focus {
+    background-color: $cholp-green-dark;
+    color: $white;
+  }
+}
+
+.container {
+  @extend .uk-width-9-10;
+  @extend .uk-container-center;
+  max-width: $content-width;
+}
+
+.inline-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+
+  li { 
+    display: inline;
+    margin: 10px;
+  }
+}
+
+// MIXINS
+@mixin fullbg {
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+@mixin ellipsis($lines, $fs, $lh) {
+  display: block;
+  display: -webkit-box;
+  max-height: $fs*$lh*$lines;
+  margin: 0 auto;
+  font-size: $fs;
+  line-height: $lh;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
