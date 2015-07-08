@@ -139,6 +139,10 @@ label {
   max-width: $content-width;
 }
 
+.no-overflow {
+  overflow: hidden;
+}
+
 .inline-list {
   margin: 0;
   padding: 0;

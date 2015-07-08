@@ -1,6 +1,6 @@
 .uk-grid
   = render "dashboard/sidebar"
-  .uk-width-3-4
+  .uk-width-medium-2-3.uk-width-large-3-4
     fieldset.info-box
       legend Edit profile
       = form_tag('/dashboard/save', multipart: true, :class => "uk-form uk-form-horizontal") do
@@ -25,9 +25,9 @@
           .uk-form-controls.uk-text-right
             = submit_tag "Save", :id => "submit", :class => "uk-button uk-button--round uk-button-large"
 
-    fieldset.info-box.uk-margin-top
-      legend Featured prints
-      ul.uk-list.uk-list-line.uk-list-space.uk-margin-remove
+    .info-box.uk-margin-top
+      label Featured prints
+      ul.uk-list.uk-list-line.uk-list-space
         - @featured_prints.each do |p|
           li
             .uk-grid
@@ -36,6 +36,6 @@
       - unless @unfeatured_prints.length == 0
         = form_tag('/dashboard/add_feature', multipart: true, id: 'edit-form', :class => "uk-form") do
 
-          .uk-form-row.uk-margin-top
+          .uk-form-row
             = select_tag "new_feature", options_from_collection_for_select(@unfeatured_prints, "id", "name")
             = submit_tag 'Add', class: "uk-button uk-button--round uk-margin-left"

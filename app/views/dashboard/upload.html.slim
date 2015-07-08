@@ -1,12 +1,12 @@
 .uk-grid
   = render "dashboard/sidebar"
-  .uk-width-3-4
+  .uk-width-medium-2-3.uk-width-large-3-4
     fieldset.info-box
       legend Upload
       = form_tag('/prints/new', multipart: true, id: 'edit-form', :class => "uk-form uk-form-stacked") do
 
-        .uk-grid
-          .uk-width-1-2
+        .uk-grid(data-uk-grid-margin)
+          .uk-width-medium-1-2
             .uk-form-row
               label.uk-form-label[for="name"] Name
               .uk-form-controls
@@ -15,7 +15,7 @@
             .uk-form-row
               label.uk-form-label[for="description"] Description
               .uk-form-controls
-                = text_area :p, :description, autofocus: true, :id => "description", :class => "uk-form-large uk-width-1-1"
+                = text_area :p, :description, autofocus: true, :id => "description", :class => "uk-form-large uk-width-1-1", :rows => 4
 
             .uk-form-row
               label.uk-form-label[for="stl"] STL file
@@ -48,7 +48,7 @@
               .uk-form-controls
                 = file_field_tag 'image5', class: 'upload'
 
-          .uk-width-1-2
+          .uk-width-medium-1-2
             .uk-form-row
               label.uk-form-label Minimum dimensions (mm)
               .uk-form-controls
@@ -95,4 +95,4 @@
 
         .uk-grid
           .uk-width-1-1.uk-text-center
-            = submit_tag 'upload', class: 'btn-green--round uk-button-large'
+            = submit_tag 'Upload', class: 'uk-button uk-button--round uk-button-large'

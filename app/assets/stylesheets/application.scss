@@ -21,32 +21,46 @@ header {
     padding: 0;
   }
 
-  #search {
-    // width: 500px;
-    // border-radius: 7px;
-  }
+  #search-container {
+    position: relative;
 
-  li {
-    .uk-button {
-      // background-color: $cholp-blue-light;
-      font-size: 12px;
-      font-weight: 700;
-      // text-transform: uppercase;
+    @include max-query($breakpoint-small-max) {
+      float: right;
+    }
 
-      &:hover,
-      &:focus {
-        // background-color: $cholp-blue;
+    form {
+      position: absolute;
+      top: 0;
+
+      @include max-query($breakpoint-small-max) {
+        right: 0;
       }
     }
+  }
 
-    &:first-child .uk-button {
-      border-top-left-radius: 3px;
-      border-bottom-left-radius: 3px;
-    }
+  .uk-navbar-flip {
+    li {
+      .uk-button {
+        // background-color: $cholp-blue-light;
+        font-size: 12px;
+        font-weight: 700;
+        // text-transform: uppercase;
 
-    &:last-child .uk-button {
-      border-top-right-radius: 3px;
-      border-bottom-right-radius: 3px;
+        &:hover,
+        &:focus {
+          // background-color: $cholp-blue;
+        }
+      }
+
+      &:first-child .uk-button {
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+      }
+
+      &:last-child .uk-button {
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+      }
     }
   }
 }

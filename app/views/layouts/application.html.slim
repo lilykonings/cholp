@@ -10,11 +10,11 @@ html
 
   body
     header.uk-navbar
-      .container
+      .container.no-overflow
         a.uk-navbar-brand[href="/"]
           img.uk-height-1-1[src=(asset_path 'logo.png')]
 
-        .uk-navbar-flip
+        .uk-navbar-flip.uk-hidden-small
           ul.uk-navbar-nav
             - if signed_in?
               li
@@ -28,8 +28,8 @@ html
               li
                 = link_to 'Login', new_user_session_path, class: 'uk-button'
 
-        .uk-navbar-content
-          form.uk-display-inline-block.uk-height-1-1[action="/search"]
+        #search-container.uk-navbar-content.uk-width-1-2.uk-width-small-2-3.uk-width-medium-1-2
+          form.uk-width-1-1.uk-height-1-1[action="/search"]
             input#search.uk-height-1-1.uk-width-1-1[name="q" placeholder="Search" value=params[:q]]
 
     main.container
