@@ -1,8 +1,8 @@
 .uk-grid(data-uk-grid-margin)
   .uk-width-medium-2-3.uk-width-large-3-4
     .profile_title = @p.name
-    #thumb_slider.thumb_slider
-      .slides_main[u="slides"]
+    #thumb_slider.thumb_slider[style="height:350px;"]
+      .slides_main[u="slides" style="height:350px;"]
         div
           div.slide[style="background-image: url('#{@p.picture_zero}');"]
           img.thumb[u="thumb" src=@p.picture_zero]

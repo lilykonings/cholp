@@ -3,7 +3,7 @@
 
 .uk-grid.uk-margin-top(data-uk-grid-margin)
   .uk-width-medium-2-3
-    .uk-grid
+    .uk-grid.uk-grid-medium
       .uk-width-1-4
         - unless @c.icon.nil?
           = image_tag @c.icon, class: 'uk-width-1-1'
@@ -19,7 +19,7 @@
       ul.uk-list.uk-list-line.uk-margin-remove
         li
           strong
-            | Total prints: 
+            | # of prints: 
           = @c.number_prints
         li.uk-margin-small-top
           a[href="mailto:#{@c_user.email}"] = @c_user.email
@@ -38,10 +38,70 @@
             a[href="#{@c_user.google_plus}"]
               i.uk-icon-google-plus
               |  Google+
-    
+
+- unless @featured_prints.length == 0
+  fieldset.info-box.uk-margin-top
+    legend Featured prints
+    #html_slider.html_slider[style="height:225px;"]
+      .slides_main[u="slides" style="height:225px;"]
+        - @featured_prints.each do |p|
+          div
+            div.slide
+              .uk-grid
+                .uk-width-1-3
+                  a[href="p/#{p.id}"]
+                    = image_tag p.picture_zero, class: 'uk-width-1-1'
+                .uk-width-2-3
+                  a[href="p/#{p.id}"]
+                    .profile_title = p.name
+                    .uk-grid
+                      .uk-width-1-2
+                        .profile_meta
+                          | Uploaded on  
+                          = p.updated_at.strftime("%B %d, %Y")
+                      .uk-width-1-2.uk-text-right
+                        .profile_meta
+                          = p.num_prints
+                          |  views
+                  p = p.description
+            img.thumb[u="thumb" src=p.picture_zero]
+
+      .jssora05l[u="arrowleft" style="top: 80px; left: 8px;"]
+      .jssora05r[u="arrowright" style="top: 80px; right: 8px"]
+
+      #thumbnavigator.thumbnav[u="thumbnavigator"]
+        .slides_nav[u="slides"]
+          .p[u="prototype"]
+            .w
+              t[u="thumbnailtemplate"]
+            .c
+
+- unless @top_prints.length == 0
+  fieldset.info-box.uk-margin-top
+    legend
+      | Top prints by 
+      = @c.name
+    .uk-grid.uk-grid-medium (data-uk-grid-margin)
+      - @top_prints.each do |p|
+        dl.uk-width-small-1-2.uk-width-medium-1-3
+          dt
+            a[href="p/#{p.id}"]
+              .grid_img.uk-margin-small-bottom[style="background-image: url('#{p.picture_zero}');height:200px;"]
+            a.grid_name[href="p/#{p.id}"] = p.name
+            .uk-grid
+              .grid_meta.uk-width-1-2
+                = p.updated_at.strftime("%B %d, %Y")
+              .grid_meta.uk-width-1-2.uk-text-right
+                - if p.num_prints == nil
+                  | 0
+                - else
+                  = p.num_prints
+                |  views
+        
+          
 
 
-/ javascript:
-/   $(document).ready(function(){
-/     var html_slider = new $JssorSlider$("html_slider", thumb_options);
-/   });
+javascript:
+  $(document).ready(function(){
+    var html_slider = new $JssorSlider$("html_slider", thumb_options);
+  });

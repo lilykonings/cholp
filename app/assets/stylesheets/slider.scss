@@ -105,17 +105,9 @@ $tab_slider-tabs: 5;
   }
 }
 
-#html_slider {
-  @extend .tab_slider;
-  #thumbnavigator {
-    display: none;
-  }
-}
-
 #thumb_slider {
   position: relative;
   width: 100%;
-  height: 350px;
   background: #191919;
   overflow: hidden;
 
@@ -125,7 +117,6 @@ $tab_slider-tabs: 5;
 
   .slides_main {
     width: 100%;
-    height: 350px;
     overflow: hidden;
 
     .slide {
@@ -241,3 +232,25 @@ $tab_slider-tabs: 5;
     height: 40px;
   }
 }
+
+#html_slider {
+  @extend #thumb_slider;
+  background-color: $white;
+
+  .jssora05l,
+  .jssora05r {
+    background: url(asset-path('slider_arrows_black.png')) no-repeat;
+  }
+
+  .jssora05l { background-position: -10px -40px; }
+  .jssora05r { background-position: -70px -40px; }
+  .jssora05l:hover { background-position: -130px -40px; }
+  .jssora05r:hover { background-position: -190px -40px; }
+  .jssora05l.jssora05ldn { background-position: -250px -40px; }
+  .jssora05r.jssora05rdn { background-position: -310px -40px; }
+}
+
+
+
+
+
