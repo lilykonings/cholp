@@ -9,6 +9,7 @@ Notes
   - Only comes in 1 weight
   - Is not a very "professional-looking" font. I'm currently using Arial for all paragraphs
 - (7/8/15): No values for upload inputs in edit print
+- (7/10/15): Kept borders and "uploaded by" on user profile. And black border around slider image has to be there, or else we'll have to enlarge the image and cut off some parts.
 
 Todo
 -------------
@@ -43,13 +44,13 @@ Todo
 * [ ] Specs section bars are wrong (outline is not thick enough) (See Tabs.png document)
 * [ ] Creator thumbnail should not be boxed in, and “uploaded by” title should not exist
 * [ ] Recommended Prints section should not be boxed in
-* [ ] Recommended Prints section should be labeled with the word “Recommended”, not “Recommended Prints”
-* [ ] “Recommended” font size should be bigger (See Mock 4)
-* [ ] Description, Specs, and Comments titles need to be bigger (See Mock 4)
+* [X] Recommended Prints section should be labeled with the word “Recommended”, not “Recommended Prints”
+* [X] “Recommended” font size should be bigger (See Mock 4)
+* [X] Description, Specs, and Comments titles need to be bigger (See Mock 4)
 * [ ] Selected images should not have black margins
 * [ ] Profile Thumbnails (See 1B on this doc)
 * [ ] Individual Print Thumbnails (See 1C on this doc)
-* [ ] Font Type (See Instructions_Copy)
+* [X] Font Type (See Instructions_Copy)
 
 **Creator Page**
 * See Mock 5
@@ -66,15 +67,15 @@ Todo
 * [ ] Font Type (See Instructions_Copy)
 
 **General**
-* [ ] Fonts, colors, and spacing on all pages (See Mocks)
+* [X] Fonts, colors, and spacing on all pages (See Mocks)
   * These were not implemented accurately
   * See attached document, Instructions-Copy
   * Fonts and colors for all pages
 * [ ] Thumbnail issues for all pages (INCLUDING SEARCH RESULTS), se 1B and 1C in this doc
 * [ ] General Site Header (Spacing, Login/ Logout button should be off white like the background, search bar should look like mocks and have rounded edges, logo should be slightly bigger, “Sign Up” and “Login/ Logout” should be capitalized)
-* [ ] Footer text should bold
-* [ ] Grid System You Discussed Implementing
-* [ ] MAKING THE PAGES LOOK LIKE MOCKS THROUGHOUT THE SITE
+* [X] Footer text should bold
+* [X] Grid System You Discussed Implementing
+* [X] MAKING THE PAGES LOOK LIKE MOCKS THROUGHOUT THE SITE
 
 Quick Start
 -------------

@@ -117,13 +117,13 @@
         .uk-grid.uk-grid-medium (data-uk-grid-margin)
           - @recommended.each do |p|
             .uk-width-1-2.uk-width-small-1-3.uk-width-medium-1-1
-              a.grid_img[href="/p/#{p.id}"]
-                = image_tag p.picture_zero, class: "uk-width-1-1"
+              a[href="/p/#{p.id}"]
+                .grid_img.uk-margin-small-bottom[style="background-image: url('#{p.picture_zero}');height:100px;"]
               a.grid_name[href="/p/#{p.id}"] = p.name
               p.grid_desc = p.description
 
 
 javascript:
-  $(document).ready(function(){
+  $( function() {
     var thumb_slider = new $JssorSlider$("thumb_slider", thumb_options);
   });

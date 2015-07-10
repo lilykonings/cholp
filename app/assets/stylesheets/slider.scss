@@ -105,6 +105,13 @@ $tab_slider-tabs: 5;
   }
 }
 
+#html_slider {
+  @extend .tab_slider;
+  #thumbnavigator {
+    display: none;
+  }
+}
+
 #thumb_slider {
   position: relative;
   width: 100%;
