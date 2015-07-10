@@ -1,0 +1,24 @@
+.profile_title {
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.profile_btn {
+  @extend .uk-button;
+
+  padding: 10px 35px !important;
+  font-size: 16px;
+}
+
+.profile_section {
+  margin: 25px 0;
+
+  h3 {
+    margin-bottom: 0;
+  }
+
+  h3 + p {
+    margin-top: 0;
+  }
+}

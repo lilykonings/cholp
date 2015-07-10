@@ -1,7 +1,7 @@
 .uk-grid (data-uk-grid-match data-uk-grid-margin)
   - unless @top_prints.length == 0
     .uk-width-medium-2-3.uk-width-large-3-4.uk-height-1-1
-      #slider_container.slider_container
+      #tab_slider.tab_slider
         .slides_main [u="slides"]
           - @featured_prints.each do |f|
             div
@@ -74,3 +74,8 @@
                       = c.number_prints
                       |  prints
                 p.grid_desc = c.description
+
+javascript:
+  $(document).ready(function(){
+    var tab_slider = new $JssorSlider$("tab_slider", tab_options);
+  });

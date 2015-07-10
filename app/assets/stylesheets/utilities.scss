@@ -167,6 +167,15 @@ label {
   background-size: cover;
 }
 
+@mixin containbg {
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+}
+
 @mixin ellipsis($lines, $fs, $lh) {
   display: block;
   display: -webkit-box;

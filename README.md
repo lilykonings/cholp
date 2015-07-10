@@ -8,6 +8,7 @@ Notes
 - (7/7/15): Don't recommend using Didatic Gothic font because
   - Only comes in 1 weight
   - Is not a very "professional-looking" font. I'm currently using Arial for all paragraphs
+- (7/8/15): No values for upload inputs in edit print
 
 Todo
 -------------

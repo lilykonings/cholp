@@ -1,104 +1,236 @@
-#slider_container {
+$tab_slider-height: 400px;
+$tab_slider-tabs: 5;
+#tab_slider {
   overflow: hidden;
   width: 100% !important;
-  height: 400px !important;
+  height: $tab_slider-height !important;
   
   & > div {
     width: 100% !important;
     transform: none !important;
   }
-}
-
-.slide {
-  width: 100%;
-  overflow: hidden;
-}
-
-.slides_main {
-  position: absolute;
-  height: 400px;
-  width: 70%;
-  overflow: hidden;
-
-  @include min-query($breakpoint-large) {
-    width: 75%;
-  }
-
-  & > * {
-    width: 100% !important;
-  }
 
   .slide {
-    height: 100%;
-    @include fullbg;
-  }
-}
-
-#thumbnavigator {
-  float: right;
-  border-top: 1px solid $cholp-green-light;
-  border-right: 1px solid $cholp-green-light;
-}
-
-.slides_nav {
-  cursor: default;
-}
-
-.thumbnav {
-  position: relative;
-  width: 30% !important;
-  height: 400px;
-
-  @include min-query($breakpoint-large) {
-    width: 25% !important;
-  }
-
-  & * {
-    width: 100% !important;
-  }
-
-  .p {
-    position: absolute;
     width: 100%;
-    height: 80px;
-    top: 0;
-    left: 0;
-    padding: 0;
+    overflow: hidden;
+  }
 
-    .c {
-      border-left: 5px solid $cholp-green-dark;
+  .slides_main {
+    position: absolute;
+    height: $tab_slider-height;
+    width: 70%;
+    overflow: hidden;
+
+    @include min-query($breakpoint-large) {
+      width: 75%;
+    }
+
+    & > * {
+      width: 100% !important;
+    }
+
+    .slide {
+      height: 100%;
+      @include fullbg;
     }
   }
 
-  .w {
+  #thumbnavigator {
+    float: right;
+    border-top: 1px solid $cholp-green-light;
+    border-right: 1px solid $cholp-green-light;
+  }
+
+  .slides_nav {
+    cursor: default;
+  }
+
+  .thumbnav {
+    position: relative;
+    width: 30% !important;
+    height: $tab_slider-height;
+
+    @include min-query($breakpoint-large) {
+      width: 25% !important;
+    }
+
+    & * {
+      width: 100% !important;
+    }
+
+    .p {
+      position: absolute;
+      width: 100%;
+      height: $tab_slider-height / $tab_slider-tabs;
+      top: 0;
+      left: 0;
+      padding: 0;
+
+      .c {
+        border-left: 5px solid $cholp-green-dark;
+      }
+    }
+
+    .w {
+      cursor: pointer;
+      position: absolute;
+      width: 100%;
+      height: $tab_slider-height / $tab_slider-tabs;
+      left: 0;
+      top: (($tab_slider-tabs * 2px) / ($tab_slider-tabs - 1)) * -1;
+      border: 1px solid $cholp-green-light;
+      border-left: 0;
+    }
+
+    .c {
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      padding: 10px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #fff;
+    }
+
+    .p .c,
+    .pav:hover .c {
+      // background-color: #eee;s
+    }
+
+    .pav .c,
+    .p:hover .c {
+      background-color: $cholp-green-light;
+    }
+  }
+}
+
+#thumb_slider {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  background: #191919;
+  overflow: hidden;
+
+  & > div > div {
+      height: 100%;
+  }
+
+  .slides_main {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+
+    .slide {
+      height: 100%;
+      @include containbg;
+    }
+  }
+
+  .jssora05l,
+  .jssora05r {
+    display: block;
+    position: absolute;
     cursor: pointer;
-    position: absolute;
-    width: 100%;
-    height: 78.2px;
-    left: 0;
-    top: -1px;
-    border: 1px solid $cholp-green-light;
-    border-left: 0;
+    width: 40px;
+    height: 40px;
+    background: url(asset-path('slider_arrows.png')) no-repeat;
+    overflow: hidden;
   }
 
-  .c {
+  .jssora05l { background-position: -10px -40px; }
+  .jssora05r { background-position: -70px -40px; }
+  .jssora05l:hover { background-position: -130px -40px; }
+  .jssora05r:hover { background-position: -190px -40px; }
+  .jssora05l.jssora05ldn { background-position: -250px -40px; }
+  .jssora05r.jssora05rdn { background-position: -310px -40px; }
+
+  
+
+  [u="thumbnavigator"] {
     box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    padding: 10px;
+    padding: 0 5px;
+    visibility: hidden;
+    background-color: rgba(0,0,0,0.75);
+    z-index: 999;
+  }
+
+  .slides_main:hover ~ [u="thumbnavigator"],
+  [u="thumbnavigator"]:hover {
+    visibility: visible;
+  }
+
+  [u="thumbnavigator"] > *,
+  .thumbnav .slides_nav {
+    width: 100% !important;
+  }
+
+  .thumbnav {
     position: absolute;
-    top: 0;
     left: 0;
-    background-color: #fff;
+    bottom: 0;
+    width: 100% !important;
+    height: 50px;
+
+    .slides_nav {
+      cursor: default;
+      left: 0 !important;
+    }
+
+    .p {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+
+      &:hover .c {
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        background-position: 50% 50%;
+        background-color: rgba(255,255,255,0);
+      }
+
+      &.pdn .c {
+        background-position: 50% 50%;
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    .t {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    .w {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    .c {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      box-sizing: content-box;
+      background-color: rgba(0,0,0,0.5);
+      -webkit-transition: background-color 0.5s;
+      transition: background-color 0.5s;
+    }
+
+    .pav .c {
+      width: 40px;
+      height: 40px;
+      background-position: 50% 50%;
+      background-color: rgba(255,255,255,0);
+    }
   }
 
-  .p .c,
-  .pav:hover .c {
-    // background-color: #eee;
-  }
-
-  .pav .c,
-  .p:hover .c {
-    background-color: $cholp-green-light;
+  * html .thumbnav .c,
+  * html .thumbnav .pdn .c,
+  * html .thumbnav .pav .c {
+    width: 40px;
+    height: 40px;
   }
 }

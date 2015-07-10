@@ -10,3 +10,14 @@
       /   li Subscriptions
       a[href="/dashboard/manage"]
         li Manage prints
+
+  - if current_user.role == 'administrator'
+    fieldset.dashboard_nav.uk-margin-top
+      legend Admin Settings
+      ul
+        a[href=""]
+          li Updates
+        a[href=""]
+          li Featured prints
+        a[href=""]
+          li Top creators

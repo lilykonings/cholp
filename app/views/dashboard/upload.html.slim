@@ -6,7 +6,7 @@
       = form_tag('/prints/new', multipart: true, id: 'edit-form', :class => "uk-form uk-form-stacked") do
 
         .uk-grid(data-uk-grid-margin)
-          .uk-width-medium-1-2
+          .uk-width-large-1-2
             .uk-form-row
               label.uk-form-label[for="name"] Name
               .uk-form-controls
@@ -48,7 +48,7 @@
               .uk-form-controls
                 = file_field_tag 'image5', class: 'upload'
 
-          .uk-width-medium-1-2
+          .uk-width-large-1-2
             .uk-form-row
               label.uk-form-label Minimum dimensions (mm)
               .uk-form-controls

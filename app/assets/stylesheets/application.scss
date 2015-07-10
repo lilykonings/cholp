@@ -1,6 +1,7 @@
 @import "base.scss";
 @import "slider.scss";
 @import "forms.scss";
+@import "profile.scss";
 
 html,
 body {
@@ -147,6 +148,14 @@ main {
 
     a:first-child li {
       border: 0;
+    }
+  }
+
+  legend {
+    margin-left: 25px;
+
+    & + * {
+      margin-top: 20px;
     }
   }
 }

@@ -22,7 +22,7 @@
 // Variables
 // ========================================================================
 
-$icon-font-path:                                 "../fonts" !default;
+// $icon-font-path:                                 "../fonts" !default;
 
 $icon-small-font-size:                           150% !default;
 $icon-medium-font-size:                          200% !default;
@@ -55,11 +55,11 @@ $icon-button-active-color:                       #444 !default;
 
 @font-face {
     font-family: 'FontAwesome';
-    src: url("#{$icon-font-path}/fontawesome-webfont.eot");
-    src: url("#{$icon-font-path}/fontawesome-webfont.eot?#iefix") format("embedded-opentype"),
-         url("#{$icon-font-path}/fontawesome-webfont.woff2") format('woff2'),
-         url("#{$icon-font-path}/fontawesome-webfont.woff") format("woff"),
-         url("#{$icon-font-path}/fontawesome-webfont.ttf") format("truetype");
+    src: font-url("fontawesome-webfont.eot");
+    src: font-url("fontawesome-webfont.eot?#iefix") format("embedded-opentype"),
+         font-url("fontawesome-webfont.woff2") format('woff2'),
+         font-url("fontawesome-webfont.woff") format("woff"),
+         font-url("fontawesome-webfont.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }

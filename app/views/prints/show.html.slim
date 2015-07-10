@@ -1,91 +1,129 @@
-#print
-  .col-70
-    #name = @p.name
-    div.galleria
-        = image_tag @p.picture_zero
+.uk-grid(data-uk-grid-margin)
+  .uk-width-medium-2-3.uk-width-large-3-4
+    .profile_title = @p.name
+    #thumb_slider.thumb_slider
+      .slides_main[u="slides"]
+        div
+          div.slide[style="background-image: url('#{@p.picture_zero}');"]
+          img.thumb[u="thumb" src=@p.picture_zero]
         - if @p.picture_one
-            = image_tag @p.picture_one
+          div
+            div.slide[style="background-image: url('#{@p.picture_one}');"]
+            img.thumb[u="thumb" src=@p.picture_one]
         - if @p.picture_two
-            = image_tag @p.picture_two
+          div
+            div.slide[style="background-image: url('#{@p.picture_two}');"]
+            img.thumb[u="thumb" src=@p.picture_two]
         - if @p.picture_three
-            = image_tag @p.picture_three
+          div
+            div.slide[style="background-image: url('#{@p.picture_three}');"]
+            img.thumb[u="thumb" src=@p.picture_three]
         - if @p.picture_four
-            = image_tag @p.picture_four
+          div
+            div.slide[style="background-image: url('#{@p.picture_four}');"]
+            img.thumb[u="thumb" src=@p.picture_four]
         - if @p.picture_five
-            = image_tag @p.picture_five
-    = link_to "", "#{@p.path}", class: 'print-button'
-    .right
-        br
-        p
-            | Uploaded on 
-            = @p.created_at.strftime("%B %d, %Y")
-            br
-            = @p.num_prints
-            |  views
-    .spacing-20
-    h3 Description
-    p = @p.description
-    .spacing-20
+          div
+            div.slide[style="background-image: url('#{@p.picture_five}');"]
+            img.thumb[u="thumb" src=@p.picture_five]
 
-    h3 Specifications
-    - if @p.materials
-        span.pill
-            | Materials: 
-        	= @p.materials
-    - if @p.min_x
-        span.pill
-            | Dimensions: 
-        	= @p.min_x
-        	|  x 
-        	= @p.min_y
-        	|  x 
-        	= @p.min_z
-    - if @p.color_supported
-        span.pill
-        	| Color supported
-    end
-    - if @p.recommended_printers
-        span.pill
-            | Recommended Printers: 
-    	    = @p.recommended_printers
-    - if @p.resolution
-        span.pill
-            | Resolution: 
-    	    = @p.resolution
-    - if @p.tolerance
-        span.pill
-            | Tolerance: 
-    	    = @p.tolerance
-    .spacing-20
-    h3 Comments
-    - @c.each do |c|
-		div.comment-wrapper
-            = link_to "#{User.find_by(id: c.user_id).username}", "/#{User.find_by(id: c.user_id).username}"
-			p = c.comment
-    - if signed_in?
-    	= form_tag("/p/#{@p.id}/comment", multipart: true, id: 'comment-form') do
-    		= text_area_tag "comment", nil, placeholder: 'Comment', id: "comment", rows: "4"
-    		= submit_tag 'Comment'
-    - else
-  .col-30
-    .box-wrapper
-        h2 Uploaded by
-        .box
-          div.profile-wrapper
-            - unless @creator.icon.nil?
-                = image_tag @creator.icon, class: 'thumbnail'
-            = link_to @creator.name, "/#{@creator.name}"
-            p = @creator.description
+      .jssora05l[u="arrowleft" style="top: 158px; left: 8px;"]
+      .jssora05r[u="arrowright" style="top: 158px; right: 8px"]
+
+      #thumbnavigator.thumbnav[u="thumbnavigator"]
+        .slides_nav[u="slides"]
+          .p[u="prototype"]
+            .w
+              t[u="thumbnailtemplate"]
+            .c
+
+    .uk-grid.uk-margin-top
+      .uk-width-1-2
+        a.profile_btn.btn-blue--round
+          i.uk-icon-download
+          |  STL file
+      .profile_meta.uk-width-1-2.uk-text-right
+        | Uploaded on 
+        strong = @p.created_at.strftime("%B %d, %Y")
+        br
+        strong
+          = @p.num_prints
+          |  views
+
+    .profile_section.uk-width-1-1
+      h3 Description
+      p = @p.description
+
+    fieldset.info-box
+      legend Specifications
+      .uk-grid.uk-grid-small (data-uk-grid-margin)
+        - if @p.materials
+          dl.uk-width-1-2
+            dt
+              strong Materials: 
+              = @p.materials
+        - if @p.min_x and @p.min_y and @p.min_z
+          dl.uk-width-1-2
+            dt
+              strong Dimensions: 
+              = @p.min_x
+              |  x 
+              = @p.min_y
+              |  x 
+              = @p.min_z
+        - if @p.color_supported
+          dl.uk-width-1-2
+            dt
+              strong Color supported: 
+              | Yes
+        - if @p.recommended_printers
+          dl.uk-width-1-2
+            dt
+              strong Recommended printers: 
+              = @p.recommended_printers
+        - if @p.resolution
+          dl.uk-width-1-2
+            dt
+              strong Resolution: 
+              = @p.resolution
+        - if @p.tolerance
+          dl.uk-width-1-2
+            dt
+              strong Tolerance: 
+              = @p.tolerance
+
+
+  .uk-width-medium-1-3.uk-width-large-1-4
+    fieldset.info-box
+      legend Uploaded by
+      .uk-grid.uk-grid-small
+        .uk-width-1-4.uk-width-medium-1-1
+          .uk-grid.uk-grid-small
+            .uk-width-1-3
+              a.grid_img[href="/#{@creator.name}"]
+                - unless @creator.icon.nil?
+                  = image_tag @creator.icon, class: "uk-width-1-1"
+            .uk-width-2-3
+              a.grid_name[href="/#{@creator.name}"] = @creator.name
+              .grid_meta
+                = @creator.number_prints
+                |  prints
+        .uk-width-3-4.uk-width-medium-1-1
+          p.grid_desc = @creator.description
+
     - unless @recommended.length == 0
-      .spacing-20
-      .box-wrapper
-        h2 Recommended Prints
-        .box
+      fieldset.info-box.uk-margin-top
+        legend Recommended
+        .uk-grid.uk-grid-medium (data-uk-grid-margin)
           - @recommended.each do |p|
-              div.profile-wrapper
-                = image_tag p.picture_zero, class: 'thumbnail'
-                = link_to p.name, "/p/#{p.id}"
-                p = p.description
-script
-  | Galleria.loadTheme('/assets/galleria/themes/classic/galleria.classic.min.js');
-  | Galleria.run('.galleria');
+            .uk-width-1-2.uk-width-small-1-3.uk-width-medium-1-1
+              a.grid_img[href="/p/#{p.id}"]
+                = image_tag p.picture_zero, class: "uk-width-1-1"
+              a.grid_name[href="/p/#{p.id}"] = p.name
+              p.grid_desc = p.description
+
+
+javascript:
+  $(document).ready(function(){
+    var thumb_slider = new $JssorSlider$("thumb_slider", thumb_options);
+  });
