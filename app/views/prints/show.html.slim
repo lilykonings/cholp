@@ -93,6 +93,27 @@
               = @p.tolerance
 
 
+    .profile_section.uk-width-1-1
+      h3 Comments
+      - unless @c.length == 0
+        ul.profile_comments.uk-list
+          - @c.each do |c|
+            li
+              strong = link_to "#{User.find_by(id: c.user_id).username}", "/#{User.find_by(id: c.user_id).username}"
+              div = c.comment
+      - if signed_in?
+        = form_tag("/p/#{@p.id}/comment", multipart: true, id: "comment-form", class: "uk-form uk-margin-top") do
+
+          .uk-form-row
+            = text_area_tag "comment", nil, placeholder: "Message", id: "comment", rows: "4", :class => "uk-width-1-1"
+            .uk-text-right
+              = submit_tag 'Send', :class => "uk-button btn--round"
+      - else
+      strong.uk-text-muted
+        = link_to 'Sign in', new_user_session_path
+        |  to comment!
+
+
   .uk-width-medium-1-3.uk-width-large-1-4
     fieldset.info-box
       legend Uploaded by

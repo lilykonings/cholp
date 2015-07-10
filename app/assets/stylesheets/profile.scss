@@ -1,3 +1,12 @@
+.uk-text-muted {
+  color: $grey-color !important;
+
+  a {
+    color: $grey-color;
+    text-decoration: underline;
+  }
+}
+
 .profile_title {
   margin-bottom: 5px;
   font-size: 20px;
@@ -20,5 +29,16 @@
 
   h3 + p {
     margin-top: 0;
+  }
+}
+
+.profile_comments {
+  li {
+    border-bottom: 1px solid $grey-color-light;
+    padding: 15px 0;
+
+    &:last-child {
+      border-bottom: 0;
+    }
   }
 }

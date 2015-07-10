@@ -48,7 +48,7 @@ Todo
 * [X] “Recommended” font size should be bigger (See Mock 4)
 * [X] Description, Specs, and Comments titles need to be bigger (See Mock 4)
 * [ ] Selected images should not have black margins
-* [ ] Profile Thumbnails (See 1B on this doc)
+* [X] Profile Thumbnails (See 1B on this doc)
 * [ ] Individual Print Thumbnails (See 1C on this doc)
 * [X] Font Type (See Instructions_Copy)
 
