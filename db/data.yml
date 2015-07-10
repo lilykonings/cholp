@@ -1,73 +1,5 @@
 
 ---
-creators:
-  columns:
-  - id
-  - created_at
-  - updated_at
-  - active
-  - name
-  - banner
-  - icon
-  - description
-  - num_prints
-  - number_prints
-  - num_subscribers
-  - user_id
-  records: 
-  - - '1'
-    - '2015-07-06 14:35:58.932782'
-    - '2015-07-06 16:40:35.666276'
-    - true
-    - pizpalue
-    - 
-    - "/creators/pizpalue/icon.jpg"
-    - For all your puzzling needs.
-    - 
-    - '3'
-    - 
-    - '1'
-  - - '2'
-    - '2015-07-06 14:47:45.131343'
-    - '2015-07-06 16:42:33.443861'
-    - true
-    - lilyc5459
-    - 
-    - "/creators/lilyc5459/icon.jpg"
-    - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam blandit velit id
-      justo porttitor hendrerit. Nulla eget erat scelerisque libero malesuada feugiat
-      rhoncus eget felis.
-    - 
-    - '5'
-    - 
-    - '2'
-  - - '3'
-    - '2015-07-06 15:23:16.872837'
-    - '2015-07-06 16:43:58.567163'
-    - true
-    - Modelman
-    - 
-    - "/creators/Modelman/icon.jpg"
-    - From models to tools, I'm your man.
-    - 
-    - '4'
-    - 
-    - '3'
-  - - '4'
-    - '2015-07-06 15:58:30.848545'
-    - '2015-07-06 16:28:34.882555'
-    - true
-    - hellojoe
-    - 
-    - "/creators/hellojoe/icon.jpg"
-    - Fixing things is my life fixing things avoiding strife fixing things I do a
-      lot using tools printed on maker bot.
-    - 
-    - '1'
-    - 
-    - '4'
-
----
 prints:
   columns:
   - id
@@ -97,7 +29,7 @@ prints:
   records: 
   - - '1'
     - '2015-07-06 14:38:19.860703'
-    - '2015-07-06 14:45:36.712545'
+    - '2015-07-08 19:03:08.665296'
     - Standard Comb
     - Standard Comb
     - "/prints/1/stl.SLDPRT"
@@ -118,7 +50,7 @@ prints:
     - '1'
     - '1'
     - '1'
-    - true
+    - false
   - - '2'
     - '2015-07-06 14:48:59.447705'
     - '2015-07-06 16:05:41.4144'
@@ -145,7 +77,7 @@ prints:
     - false
   - - '3'
     - '2015-07-06 14:50:14.384752'
-    - '2015-07-06 16:05:30.716044'
+    - '2015-07-10 15:03:32.915304'
     - Board Connector
     - This piece allows the checker board pieces to be connected. Use these between
       each adjacent piece to hold them together. Compatible with my other prints.
@@ -156,7 +88,7 @@ prints:
     - 
     - 
     - 
-    - '1'
+    - '3'
     - 
     - '60'
     - '60'
@@ -194,7 +126,7 @@ prints:
     - false
   - - '5'
     - '2015-07-06 14:52:20.48348'
-    - '2015-07-06 16:41:31.922602'
+    - '2015-07-10 18:03:18.710938'
     - Red Checker Piece
     - Red checker piece that must be dyed or must be printed in colored plastic.
     - "/prints/5/stl.STL"
@@ -204,7 +136,7 @@ prints:
     - 
     - 
     - 
-    - 
+    - '34'
     - 
     - '65'
     - '65'
@@ -218,7 +150,7 @@ prints:
     - true
   - - '6'
     - '2015-07-06 14:53:22.330802'
-    - '2015-07-06 16:10:54.008647'
+    - '2015-07-10 15:04:50.673226'
     - Black Checker Board
     - Black checker board that must be dyed or must be printed in colored plastic.
     - "/prints/6/stl.STL"
@@ -228,7 +160,7 @@ prints:
     - 
     - 
     - 
-    - '1'
+    - '6'
     - 
     - '75'
     - '75'
@@ -242,7 +174,7 @@ prints:
     - false
   - - '7'
     - '2015-07-06 14:55:33.912065'
-    - '2015-07-06 16:05:27.179766'
+    - '2015-07-10 16:58:09.666421'
     - Ship
     - A ship modeled after the revolutionary era ships. This print is untested and
       contains small parts so be warned.
@@ -253,7 +185,7 @@ prints:
     - 
     - 
     - 
-    - '1'
+    - '151'
     - 
     - '10'
     - '20'
@@ -267,7 +199,7 @@ prints:
     - true
   - - '8'
     - '2015-07-06 14:56:49.501973'
-    - '2015-07-06 16:10:51.720673'
+    - '2015-07-10 16:55:12.033196'
     - Baja Car
     - Scale model of the Cornell University baja racing car used for wind tunnel analysis.
     - "/prints/8/stl.STL"
@@ -277,7 +209,7 @@ prints:
     - 
     - 
     - 
-    - '1'
+    - '31'
     - 
     - '89'
     - '95'
@@ -291,7 +223,7 @@ prints:
     - true
   - - '9'
     - '2015-07-06 15:24:04.752234'
-    - '2015-07-06 21:29:06.258271'
+    - '2015-07-10 06:12:11.596153'
     - Dice Set Base
     - A collection of dice of different sizes and sides. You wold have to carve or
       mark the numbers if you choose to print them.
@@ -302,7 +234,7 @@ prints:
     - 
     - 
     - 
-    - '2'
+    - '5'
     - 
     - '10'
     - '10'
@@ -341,7 +273,7 @@ prints:
     - true
   - - '11'
     - '2015-07-06 15:27:22.671435'
-    - '2015-07-06 15:27:22.68773'
+    - '2015-07-07 20:41:48.457194'
     - FTRD Hook Edge
     - Hook edge for the face turning rhombic dodecahedron. This piece is labeled 5.
       This print has been successfully printed in ABS.
@@ -352,7 +284,7 @@ prints:
     - 
     - 
     - 
-    - 
+    - '1'
     - 
     - '50'
     - '50'
@@ -366,7 +298,7 @@ prints:
     - false
   - - '12'
     - '2015-07-06 15:28:03.098632'
-    - '2015-07-06 15:28:03.114856'
+    - '2015-07-07 04:56:35.680574'
     - FTRD Center Cap
     - Center cap for the face turning rhombic dodecahedron. The center is piece number
       1. This print has been successfully printed in ABS.
@@ -377,7 +309,7 @@ prints:
     - 
     - 
     - 
-    - 
+    - '1'
     - 
     - '50'
     - '50'
@@ -391,7 +323,7 @@ prints:
     - false
   - - '13'
     - '2015-07-06 15:59:36.662778'
-    - '2015-07-06 15:59:36.683255'
+    - '2015-07-07 19:51:56.973074'
     - Ring
     - This is a ring.
     - "/prints/13/stl.STL"
@@ -401,7 +333,7 @@ prints:
     - 
     - 
     - 
-    - 
+    - '1'
     - 
     - '1'
     - '2'
@@ -411,6 +343,129 @@ prints:
     - '"MakerBot"'
     - '1'
     - '1'
+    - '4'
+    - false
+  - - '14'
+    - '2015-07-08 19:48:34.266442'
+    - '2015-07-10 05:04:06.114062'
+    - Solar Array Mount
+    - Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+    - "/prints/14/stl.jpg"
+    - "/prints/14/image.jpg"
+    - 
+    - 
+    - 
+    - 
+    - 
+    - '1'
+    - 
+    - '25'
+    - '30'
+    - '5'
+    - '"ABS"'
+    - false
+    - '"MakerBot"'
+    - '1'
+    - '1'
+    - '1'
+    - false
+
+---
+comments:
+  columns:
+  - id
+  - created_at
+  - updated_at
+  - user_id
+  - time
+  - comment
+  - print_id
+  records: 
+  - - '1'
+    - '2015-07-10 16:45:29.74086'
+    - '2015-07-10 16:45:29.74086'
+    - '1'
+    - 
+    - This probably won't float well.
+    - '7'
+  - - '2'
+    - '2015-07-10 16:48:01.185123'
+    - '2015-07-10 16:48:01.185123'
+    - '1'
+    - 
+    - Just tested it. Yup, doesn't float.
+    - '7'
+
+---
+creators:
+  columns:
+  - id
+  - created_at
+  - updated_at
+  - active
+  - name
+  - banner
+  - icon
+  - description
+  - num_prints
+  - number_prints
+  - num_subscribers
+  - user_id
+  - top_creator
+  records: 
+  - - '1'
+    - '2015-07-06 14:35:58.932782'
+    - '2015-07-06 16:40:35.666276'
+    - true
+    - pizpalue
+    - "/creators/pizpalue/banner.jpg"
+    - "/creators/pizpalue/icon.jpg"
+    - For all your puzzling needs.
+    - 
+    - '3'
+    - 
+    - '1'
+    - false
+  - - '2'
+    - '2015-07-06 14:47:45.131343'
+    - '2015-07-06 16:42:33.443861'
+    - true
+    - lilyc5459
+    - "/creators/lilyc5459/banner.jpg"
+    - "/creators/lilyc5459/icon.jpg"
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam blandit velit id
+      justo porttitor hendrerit. Nulla eget erat scelerisque libero malesuada feugiat
+      rhoncus eget felis.
+    - 
+    - '5'
+    - 
+    - '2'
+    - false
+  - - '3'
+    - '2015-07-06 15:23:16.872837'
+    - '2015-07-06 16:43:58.567163'
+    - true
+    - Modelman
+    - 
+    - "/creators/Modelman/icon.jpg"
+    - From models to tools, I'm your man.
+    - 
+    - '4'
+    - 
+    - '3'
+    - false
+  - - '4'
+    - '2015-07-06 15:58:30.848545'
+    - '2015-07-06 16:28:34.882555'
+    - true
+    - hellojoe
+    - 
+    - "/creators/hellojoe/icon.jpg"
+    - Fixing things is my life fixing things avoiding strife fixing things I do a
+      lot using tools printed on maker bot.
+    - 
+    - '1'
+    - 
     - '4'
     - false
 
@@ -432,37 +487,46 @@ users:
   - updated_at
   - role
   - username
+  - facebook
+  - twitter
+  - google_plus
   records: 
   - - '1'
     - ntuntasood@gmail.com
-    - "$2a$10$X7S3XsZh1dIV/Iqrz0u2AebFAr2ul56h8CxamswE0/tE2GwSSJhsi"
+    - "$2a$10$fg9Wb5P97lF8uZSPd2WWTe8n7gV.m3f7jgIDDAJH9t6cQl5xQnxui"
     - 
     - 
     - 
-    - '5'
-    - '2015-07-06 16:44:26.196144'
-    - '2015-07-06 16:40:22.959192'
+    - '11'
+    - '2015-07-10 04:11:31.607691'
+    - '2015-07-08 17:08:25.278602'
     - 127.0.0.1
     - 127.0.0.1
     - '2015-07-06 14:34:02.026226'
-    - '2015-07-06 16:44:26.197245'
+    - '2015-07-10 04:11:31.61861'
     - administrator
     - pizpalue
+    - 
+    - 
+    - 
   - - '2'
     - lilyc5459@gmail.com
     - "$2a$10$97WnxmvrJUG2TjuYREPlz.x6KfvIbkS4XM76jWMvv5riLQeKpBY3O"
     - 
     - 
     - 
-    - '2'
+    - '3'
+    - '2015-07-08 21:10:32.942239'
     - '2015-07-06 16:40:56.452764'
-    - '2015-07-06 14:47:41.327212'
     - 127.0.0.1
     - 127.0.0.1
     - '2015-07-06 14:47:41.314085'
-    - '2015-07-06 16:40:56.454008'
+    - '2015-07-08 21:10:32.943695'
     - 
     - lilyc5459
+    - 'alilybit'
+    - '@alilybit'
+    - 
   - - '3'
     - test@test.com
     - "$2a$10$1tg1KyXsyy3yRJZlA7fwkeZzkkvosdaJT7Bjb/djpXnl8hmuT0xGa"
@@ -478,6 +542,9 @@ users:
     - '2015-07-06 16:43:48.192686'
     - 
     - Modelman
+    - 
+    - 
+    - 
   - - '4'
     - test@gmail.com
     - "$2a$10$CHWAACiodWl6C.0soUHS/uX.QLbu8ZjYoWwdTiNRko9vBQ67ald7y"
@@ -493,3 +560,6 @@ users:
     - '2015-07-06 15:58:22.58158'
     - 
     - hellojoe
+    - 
+    - 
+    - 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150706025133) do
+ActiveRecord::Schema.define(version: 20150710183233) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20150706025133) do
     t.integer  "number_prints"
     t.integer  "num_subscribers"
     t.integer  "user_id"
+    t.boolean  "top_creator"
   end
 
   create_table "prints", force: true do |t|
@@ -87,6 +88,12 @@ ActiveRecord::Schema.define(version: 20150706025133) do
     t.datetime "updated_at"
   end
 
+  create_table "updates", force: true do |t|
+    t.datetime "created_at"
+    t.string   "title"
+    t.string   "link"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -102,6 +109,9 @@ ActiveRecord::Schema.define(version: 20150706025133) do
     t.datetime "updated_at"
     t.string   "role"
     t.string   "username"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "google_plus"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -1,7 +1,44 @@
-.uk-grid(data-uk-grid-margin)
+- unless @c.banner.nil?
+  .profile_banner[style="background-image: url('#{@c.banner}');"]
+
+.uk-grid.uk-margin-top(data-uk-grid-margin)
   .uk-width-medium-2-3
-    
+    .uk-grid
+      .uk-width-1-4
+        - unless @c.icon.nil?
+          = image_tag @c.icon, class: 'uk-width-1-1'
+      .uk-width-3-4
+        .profile_title.uk-display-inline-block
+          = @c.name
+        .uk-text-muted.uk-display-inline-block.uk-margin-small-left
+          | Date joined: 
+          = @c.created_at.strftime("%m/%d/%Y")
+        div = @c.description
   .uk-width-medium-1-3
+    .info-box
+      ul.uk-list.uk-list-line.uk-margin-remove
+        li
+          strong
+            | Total prints: 
+          = @c.number_prints
+        li.uk-margin-small-top
+          a[href="mailto:#{@c_user.email}"] = @c_user.email
+        - if @c_user.facebook
+          li
+            a[href="http://facebook.com/#{@c_user.facebook}"]
+              i.uk-icon-facebook
+              |  Facebook
+        - if @c_user.twitter
+          li
+            a[href="http://twitter.com/#{@c_user.twitter}"]
+              i.uk-icon-twitter
+              |  Twitter
+        - if @c_user.google_plus
+          li
+            a[href="#{@c_user.google_plus}"]
+              i.uk-icon-google-plus
+              |  Google+
+    
 
 
 / javascript:

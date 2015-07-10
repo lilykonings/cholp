@@ -9,7 +9,10 @@ Notes
   - Only comes in 1 weight
   - Is not a very "professional-looking" font. I'm currently using Arial for all paragraphs
 - (7/8/15): No values for upload inputs in edit print
-- (7/10/15): Kept borders and "uploaded by" on user profile. And black border around slider image has to be there, or else we'll have to enlarge the image and cut off some parts.
+- (7/10/15)
+  - Kept borders and "uploaded by" on user profile.
+  - Black border around slider image has to be there, or else we'll have to enlarge the image and cut off some parts.
+  - Recommend using a default icon picture for users who haven't uploaded one
 
 Todo
 -------------
