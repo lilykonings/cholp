@@ -42,8 +42,8 @@ $navbar-color:                                   #444 !default;
 $navbar-link-color:                              #07D !default;
 $navbar-link-hover-color:                        #059 !default;
 
-$navbar-nav-height:                              40px !default;
-$navbar-nav-line-height:                         $navbar-nav-height !default;
+$navbar-nav-height:                              70px !default;
+$navbar-nav-line-height:                         40px !default;
 $navbar-nav-padding-horizontal:                  15px !default;
 $navbar-nav-color:                               #444 !default;
 $navbar-nav-font-size:                           14px !default;
@@ -122,7 +122,7 @@ $navbar-toggle-icon-alt:                         "\f002" !default;
     box-sizing: border-box;
     text-decoration: none;
     /* 1 */
-    height: $navbar-nav-height;
+    height: $navbar-nav-line-height;
     padding: 0 $navbar-nav-padding-horizontal;
     line-height: $navbar-nav-line-height;
     /* 2 */
@@ -192,10 +192,20 @@ $navbar-toggle-icon-alt:                         "\f002" !default;
 .uk-navbar-toggle {
     box-sizing: border-box;
     display: block;
-    height: $navbar-nav-height;
+    height: $navbar-nav-line-height;
     padding: 0 $navbar-nav-padding-horizontal;
     float: left;
     @include hook-navbar-content();
+}
+
+.uk-navbar-brand {
+    height: $navbar-nav-height;
+}
+
+.uk-navbar-content,
+.uk-navbar-flip {
+    margin-top: ($navbar-nav-height - $navbar-nav-line-height)/2;
+    margin-bottom: ($navbar-nav-height - $navbar-nav-line-height)/2;
 }
 
 /*

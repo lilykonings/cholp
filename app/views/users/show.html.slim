@@ -20,7 +20,7 @@
         li
           strong
             = @c.number_prints
-          |  prints
+            |  prints
         li.uk-margin-small-top
           a[href="mailto:#{@c_user.email}"] = @c_user.email
         - if @c_user.facebook
@@ -54,15 +54,15 @@
                 .uk-width-2-3
                   a[href="p/#{p.id}"]
                     .profile_title = p.name
-                    .uk-grid
-                      .uk-width-1-2
-                        .profile_meta
-                          | Uploaded on  
-                          = p.updated_at.strftime("%B %d, %Y")
-                      .uk-width-1-2.uk-text-right
-                        .profile_meta
-                          = p.num_prints
-                          |  views
+                  .uk-grid
+                    .uk-width-1-2
+                      .profile_meta
+                        | Uploaded on  
+                        = p.updated_at.strftime("%B %d, %Y")
+                    .uk-width-1-2.uk-text-right
+                      .profile_meta
+                        = p.num_prints
+                        |  views
                   p = p.description
             img.thumb[u="thumb" src=p.picture_zero]
 
