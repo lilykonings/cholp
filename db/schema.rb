@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150710183233) do
+ActiveRecord::Schema.define(version: 20150711000516) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20150710183233) do
     t.integer  "num_subscribers"
     t.integer  "user_id"
     t.boolean  "top_creator"
+    t.boolean  "featured"
   end
 
   create_table "prints", force: true do |t|
@@ -79,6 +80,7 @@ ActiveRecord::Schema.define(version: 20150710183233) do
     t.float    "tolerance"
     t.integer  "creator_id"
     t.boolean  "featured"
+    t.boolean  "site_featured"
   end
 
   create_table "subscriptions", force: true do |t|
@@ -93,6 +95,8 @@ ActiveRecord::Schema.define(version: 20150710183233) do
     t.string   "title"
     t.string   "link"
   end
+
+  add_index "updates", ["id"], name: "index_updates_on_id", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

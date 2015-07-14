@@ -19,13 +19,13 @@
       ul.uk-list.uk-list-line.uk-margin-remove
         li
           strong
-            | # of prints: 
-          = @c.number_prints
+            = @c.number_prints
+          |  prints
         li.uk-margin-small-top
           a[href="mailto:#{@c_user.email}"] = @c_user.email
         - if @c_user.facebook
           li
-            a[href="http://facebook.com/#{@c_user.facebook}"]
+            a[href="#{@c_user.facebook}"]
               i.uk-icon-facebook
               |  Facebook
         - if @c_user.twitter
@@ -79,7 +79,7 @@
 - unless @top_prints.length == 0
   fieldset.info-box.uk-margin-top
     legend
-      | Top prints by 
+      | Popular from  
       = @c.name
     .uk-grid.uk-grid-medium (data-uk-grid-margin)
       - @top_prints.each do |p|
@@ -97,6 +97,8 @@
                 - else
                   = p.num_prints
                 |  views
+      .uk-width-1-1.uk-text-center.uk-margin-large-top
+        a.btn-blue--round[href="/#{@c.name}/all"] Show all
         
           
 

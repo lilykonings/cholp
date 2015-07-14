@@ -13,6 +13,8 @@ Notes
   - Kept borders and "uploaded by" on user profile.
   - Black border around slider image has to be there, or else we'll have to enlarge the image and cut off some parts.
   - Recommend using a default icon picture for users who haven't uploaded one
+  - "show all" has a broken link on image, need root path
+  - add profile link
 
 Todo
 -------------
@@ -57,17 +59,17 @@ Todo
 
 **Creator Page**
 * See Mock 5
-* [ ] “Date joined” (currently listed as “since 10/10/10”), number of uploaded prints, and email should appear to the right of the Bio (See Mock 5)
-* [ ] Social media icons/ links should appear below profile image
-* [ ] Scrollable featured section should include information (ie image, upload name, number of views, upload date, and description) from selected prints (form to feature prints already exists in creator portal and information is already all stored on individual print pages)- See Mock 5 for a good illustration of what we are going for with this space (simply organizing information from individual print pages)
-* [ ] “Top prints from…”should be labeled “Popular From…” and should not be boxed in
+* [X] “Date joined” (currently listed as “since 10/10/10”), number of uploaded prints, and email should appear to the right of the Bio (See Mock 5)
+* [X] Social media icons/ links should appear below profile image
+* [X] Scrollable featured section should include information (ie image, upload name, number of views, upload date, and description) from selected prints (form to feature prints already exists in creator portal and information is already all stored on individual print pages)- See Mock 5 for a good illustration of what we are going for with this space (simply organizing information from individual print pages)
+* [X] “Top prints from…”should be labeled “Popular From…” and should not be boxed in
 * [ ] “View All” button should line up evenly with “Popular from…”
-* [ ] Creator name should not be yellow, and should be bigger (See Mock 5)
-* [ ] There are some small corresponding changes that must be made to the “profile page form” (which is linked in the creator portal and is the medium through which creators manage their profile pages)
-  * [ ] Needs space to type in email (optional)
-  * [ ] Needs space to type in FB URL, Twitter URL, and GMAIL URL (to be linked to icons underneath the profile image)
-  * [ ] Featured prints drop down menu should NOT change (this already exists)
-* [ ] Font Type (See Instructions_Copy)
+* [X] Creator name should not be yellow, and should be bigger (See Mock 5)
+* [X] There are some small corresponding changes that must be made to the “profile page form” (which is linked in the creator portal and is the medium through which creators manage their profile pages)
+  * [X] Needs space to type in email (optional)
+  * [X] Needs space to type in FB URL, Twitter URL, and GMAIL URL (to be linked to icons underneath the profile image)
+  * [X] Featured prints drop down menu should NOT change (this already exists)
+* [X] Font Type (See Instructions_Copy)
 
 **General**
 * [X] Fonts, colors, and spacing on all pages (See Mocks)

@@ -54,44 +54,32 @@
       h3 Description
       p = @p.description
 
-    fieldset.info-box
-      legend Specifications
-      .uk-grid.uk-grid-small (data-uk-grid-margin)
-        - if @p.materials
-          dl.uk-width-1-2
-            dt
-              strong Materials: 
-              = @p.materials
-        - if @p.min_x and @p.min_y and @p.min_z
-          dl.uk-width-1-2
-            dt
-              strong Dimensions: 
-              = @p.min_x
-              |  x 
-              = @p.min_y
-              |  x 
-              = @p.min_z
-        - if @p.color_supported
-          dl.uk-width-1-2
-            dt
-              strong Color supported: 
-              | Yes
-        - if @p.recommended_printers
-          dl.uk-width-1-2
-            dt
-              strong Recommended printers: 
-              = @p.recommended_printers
-        - if @p.resolution
-          dl.uk-width-1-2
-            dt
-              strong Resolution: 
-              = @p.resolution
-        - if @p.tolerance
-          dl.uk-width-1-2
-            dt
-              strong Tolerance: 
-              = @p.tolerance
-
+    .profile_section.uk-width-1-1
+      h3 Specifications
+      - if @p.materials
+        - @p.materials.gsub(/\s|"/,'').split(',').each do |m|
+          .pill = m
+      - if @p.min_x and @p.min_y and @p.min_z
+        .pill
+          = @p.min_x
+          | mm x 
+          = @p.min_y
+          | mm x 
+          = @p.min_z
+          | mm
+      - if @p.color_supported
+        .pill color supported
+      - if @p.recommended_printers
+        - @p.recommended_printers.gsub(/\s|"/,'').split(',').each do |p|
+          .pill = p
+      - if @p.resolution
+        .pill 
+          = @p.resolution
+          | mm resolution
+      - if @p.tolerance
+        .pill
+          = @p.tolerance
+          | mm tolerance
 
     .profile_section.uk-width-1-1
       h3 Comments
@@ -100,6 +88,7 @@
           - @c.each do |c|
             li
               strong = link_to "#{User.find_by(id: c.user_id).username}", "/#{User.find_by(id: c.user_id).username}"
+              .uk-text-muted.uk-display-inline.uk-float-right = c.created_at.strftime("%B %d, %Y")
               div = c.comment
       - if signed_in?
         = form_tag("/p/#{@p.id}/comment", multipart: true, id: "comment-form", class: "uk-form uk-margin-top") do
@@ -109,9 +98,9 @@
             .uk-text-right
               = submit_tag 'Send', :class => "uk-button btn--round"
       - else
-      strong.uk-text-muted
-        = link_to 'Sign in', new_user_session_path
-        |  to comment!
+        strong.uk-text-muted
+          = link_to 'Sign in', new_user_session_path
+          |  to comment!
 
 
   .uk-width-medium-1-3.uk-width-large-1-4
@@ -141,7 +130,14 @@
               a[href="/p/#{p.id}"]
                 .grid_img.uk-margin-small-bottom[style="background-image: url('#{p.picture_zero}');height:100px;"]
               a.grid_name[href="/p/#{p.id}"] = p.name
-              p.grid_desc = p.description
+              .grid_meta.uk-float-left
+                  = p.updated_at.strftime("%B %d, %Y")
+              .grid_meta.uk-float-right.uk-text-right
+                - if p.num_prints == nil
+                  | 0
+                - else
+                  = p.num_prints
+                |  views
 
 
 javascript:

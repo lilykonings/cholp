@@ -1,5 +1,5 @@
 .uk-grid (data-uk-grid-match data-uk-grid-margin)
-  - unless @top_prints.length == 0
+  - unless @featured_prints.length == 0
     .uk-width-medium-2-3.uk-width-large-3-4.uk-height-1-1
       #tab_slider.tab_slider
         .slides_main[u="slides"]
@@ -56,7 +56,7 @@
                       = p.num_prints
                     |  views
 
-  - unless @top_prints.length == 0
+  - unless @top_creators.length == 0
     .uk-width-medium-1-3.uk-width-large-1-4.uk-height-1-1
       fieldset.info-box.uk-width-1-1
         legend Top Creators

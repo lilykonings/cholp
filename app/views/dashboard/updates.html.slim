@@ -1,0 +1,34 @@
+.uk-grid
+  = render "dashboard/sidebar"
+  .uk-width-medium-2-3.uk-width-large-3-4
+    fieldset.info-box
+      legend Updates
+      / ul.uk-list.uk-list-line.uk-list-space.uk-margin-remove
+      /   - @updates.each do |u|
+      /     li
+      /       .uk-grid
+      /         .uk-width-1-2.uk-text-bold
+      /           = u.title
+      /         .uk-width-1-2.uk-text-right.uk-text-muted
+      /           = link_to 'Delete', "delete"
+
+      = form_tag('/dashboard/new_update', multipart: true, :class => "uk-form uk-form-horizontal") do
+
+        .uk-form-row
+          label.uk-form-label[for="title"] Title
+          .uk-form-controls
+            = text_field :update, :title, :id => "title", :class => "uk-form-large uk-width-1-1"
+
+        / .uk-form-row
+        /   label.uk-form-label[for="date"] Date
+        /   .uk-form-controls
+        /     = text_field :update, :date, :id => "date", :class => "uk-form-large uk-width-1-1", :value => "#{@current_date}"
+
+        .uk-form-row
+          label.uk-form-label[for="link"] Link
+          .uk-form-controls
+            = text_field :update, :link, :id => "link", :class => "uk-form-large uk-width-1-1"
+
+        .uk-form-row
+          .uk-form-controls.uk-text-right
+            = submit_tag "Save", :id => "submit", :class => "uk-button uk-button--round uk-button-large"

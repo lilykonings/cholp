@@ -1,0 +1,28 @@
+.uk-grid
+  = render "dashboard/sidebar"
+  .uk-width-medium-2-3.uk-width-large-3-4
+    fieldset.info-box
+      legend Top creators
+      - if @featured_creators.length == 0
+        p Sorry, no creators are featured right now.
+      - else
+        ul.uk-list.uk-list-line.uk-list-space
+          - @featured_creators.each do |f|
+            li
+              .uk-grid
+                .uk-width-1-2.uk-text-bold
+                  = f.name
+                .uk-width-1-2.uk-text-right.uk-text-muted
+                  = link_to "Remove", "/dashboard/remove_top_creator/#{f.user_id}"
+      
+    .info-box.uk-margin-top
+      = form_tag('/dashboard/new_top_creator', multipart: true, :class => "uk-form uk-form-horizontal") do
+
+        .uk-form-row
+          label.uk-form-label[for="username"] Username
+          .uk-form-controls
+            = text_field :c, :username, :id => "username", :class => "uk-form-large uk-width-1-1"
+
+        .uk-form-row
+          .uk-form-controls.uk-text-right
+            = submit_tag "Add", :id => "submit", :class => "uk-button uk-button--round uk-button-large"

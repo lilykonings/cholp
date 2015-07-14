@@ -15,6 +15,26 @@
                 - unless @c.icon.nil?
                   = link_to 'Remove current icon', '/dashboard/remove_icon',
                   method: :post
+
+        .uk-form-row
+          label.uk-form-label[for="email"] Email
+          .uk-form-controls
+            = text_field :c, :email, :id => "email", :value => "#{@u.email}", :class => "uk-form-large uk-width-1-1"
+
+        .uk-form-row
+          label.uk-form-label[for="facebook"] Facebook
+          .uk-form-controls
+            = text_field :c, :facebook, :id => "facebook", :placeholder => "http://facebook.com/cholp", :value => "#{@u.facebook}", :class => "uk-form-large uk-width-1-1"
+
+        .uk-form-row
+          label.uk-form-label[for="twitter"] Twitter
+          .uk-form-controls
+            = text_field :c, :twitter, :id => "twitter", :placeholder => "@cholp", :value => "#{@u.twitter}", :class => "uk-form-large uk-width-1-1"
+
+        .uk-form-row
+          label.uk-form-label[for="google_plus"] Google+
+          .uk-form-controls
+            = text_field :c, :google_plus, :id => "google_plus", :placeholder => "http://plus.google.com/cholp", :value => "#{@u.google_plus}", :class => "uk-form-large uk-width-1-1"
         
         .uk-form-row
           label.uk-form-label[for="description"] Description
