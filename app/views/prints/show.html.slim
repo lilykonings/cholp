@@ -130,14 +130,15 @@
               a[href="/p/#{p.id}"]
                 .grid_img.uk-margin-small-bottom[style="background-image: url('#{p.picture_zero}');height:100px;"]
               a.grid_name[href="/p/#{p.id}"] = p.name
-              .grid_meta.uk-float-left
-                  = p.updated_at.strftime("%B %d, %Y")
-              .grid_meta.uk-float-right.uk-text-right
-                - if p.num_prints == nil
-                  | 0
-                - else
-                  = p.num_prints
-                |  views
+              .uk-width-1-1
+                .grid_meta.uk-float-left
+                    = p.updated_at.strftime("%B %d, %Y")
+                .grid_meta.uk-float-right.uk-text-right
+                  - if p.num_prints == nil
+                    | 0
+                  - else
+                    = p.num_prints
+                  |  views
 
 
 javascript:

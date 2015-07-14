@@ -1,29 +1,49 @@
-.col-30
-    = link_to "Creator Results", "/search/creators?q=#{@q}", class: 'db-button'
-    .spacing-20
-	.box-wrapper
-		h2 Filter
-		.box
-			form action="/search"
-				= text_field_tag :q, params['q'], type: "hidden"
-				.spacing-20
-				h5 Materials
-				.spacing-20
-				= check_box_tag :"materials[]", "ABS", checked=(params['materials'] != nil and params['materials'].include?('ABS'))
-				'ABS
-				br
-				= check_box_tag :"materials[]", "Metal", checked=(params['materials'] != nil and params['materials'].include?('Metal'))
-				'Metal
-				.spacing-20
-				= submit_tag 'Filter'
-.col-70
-	.box-wrapper
-		h2 Prints Results
-		.box
-			- @prints.each do |p|
-				div.print-wrapper
-				  div.thumbnail-wrapper
-				  	= image_tag p.picture_zero, class: 'thumbnail'
-				  = link_to p.name, "p/#{p.id}"
-				  p = p.description
-			.clear
+h3.uk-margin-top-remove Results for "#{@q}"
+ul.uk-tab(data-uk-tab data-uk-switcher="{connect:'#results'}")
+  li.uk-active
+    a[href=""] Prints
+  li
+    a[href=""] Creators
+.info-box--tab
+  ul#results.uk-switcher
+    li
+      .uk-form.ih-form
+        fieldset(data-uk-margin)
+          span Materials:
+          = text_field_tag :q, params['q'], type: "hidden"
+          label.uk-form-label
+            = check_box_tag :"materials[]", "ABS", checked=(params['materials'] != nil and params['materials'].include?('ABS'))
+            |  ABS
+          label.uk-form-label
+            = check_box_tag :"materials[]", "Metal", checked=(params['materials'] != nil and params['materials'].include?('Metal'))
+            |  Metal
+          = submit_tag 'Filter', class: "uk-button uk-button--round"
+      - unless @prints.length == 0
+        .uk-grid (data-uk-grid-margin)
+          - @prints.each do |p|
+            dl.uk-width-1-2.uk-width-small-1-3.uk-width-large-1-4
+              dt
+                a[href="p/#{p.id}"]
+                  .grid_img.uk-margin-small-bottom[style="background-image: url('#{p.picture_zero}');height:150px;"]
+                a.grid_name[href="p/#{p.id}"] = p.name
+                p.grid_desc = p.description
+      - else
+        .uk-text-center
+          h3 No results!
+          | Try broadening your search.
+          
+    li
+      - unless @people.length == 0
+        .uk-grid (data-uk-grid-margin)
+          - @people.each do |p|
+            - unless p.creator.nil?
+              dl.uk-width-1-2.uk-width-small-1-3.uk-width-large-1-4
+                dt
+                  a[href="p/#{p.id}"]
+                    .grid_img.uk-margin-small-bottom[style="background-image: url('#{p.creator.icon}');height:150px;"]
+                  a.grid_name[href="/#{p.username}"] = p.username
+                  p.grid_desc = p.creator.description
+      - else
+        .uk-text-center
+          h3 No results!
+          | Try broadening your search.

@@ -1,6 +1,5 @@
 @import "base.scss";
 @import "slider.scss";
-@import "forms.scss";
 @import "profile.scss";
 
 html,
@@ -96,6 +95,10 @@ main {
   overflow-y: scroll;
 }
 
+.info-box--tab {
+  border-top: 0;
+}
+
 // GRID INFO
 .grid_name {
   font-weight: 700;
@@ -136,6 +139,26 @@ main {
 .overlay_title {
   font-size: 16px;
   font-weight: 800;
+}
+
+// INLINE-HORIZONTAL FORM
+.ih-form {
+  border-bottom: 1px solid $grey-color-light;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+
+  fieldset {
+    & > * {
+      margin-right: 10px;
+    }
+  }
+
+  &.uk-text-right fieldset {
+    & > * {
+      margin-right: 0;
+      margin-left: 10px;
+    }
+  }
 }
 
 // DASHBOARD

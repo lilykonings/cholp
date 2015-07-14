@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   get 'dashboard/remove_top_creator/:id' => 'dashboard#remove_top_creator'
 
   get 'search' => 'search#index'
-  get 'search/creators' => 'search#people'
+  # get 'search/creators' => 'search#people'
   get 'login' => 'login#index'
   get 'contact' => 'contact#index'
   get 'privacy' => 'privacy#index'

@@ -46,10 +46,10 @@
                 a[href="p/#{p.id}"]
                   .grid_img.uk-margin-small-bottom[style="background-image: url('#{p.picture_zero}');height:150px;"]
                 a.grid_name[href="p/#{p.id}"] = p.name
-                .uk-grid
-                  .grid_meta.uk-width-1-2
-                    = p.updated_at.strftime("%B %d, %Y")
-                  .grid_meta.uk-width-1-2.uk-text-right
+                .uk-width-1-1
+                  .grid_meta.uk-float-left
+                      = p.updated_at.strftime("%B %d, %Y")
+                  .grid_meta.uk-float-right.uk-text-right
                     - if p.num_prints == nil
                       | 0
                     - else

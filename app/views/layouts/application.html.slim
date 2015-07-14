@@ -50,14 +50,7 @@ html
             a#contact[href="/contact"] Contact Us
         #copyright &copy Cholp 2015
   
-  script
-    / | Galleria.loadTheme('/assets/galleria/themes/classic/galleria.classic.min.js');
-      // #social-buttons
-      // a[href="https://www.facebook.com/"]
-      //   img.social[src=(asset_path 'facebook128.png')]
-      // a[href="https://twitter.com/?lang=en"]
-      //   img.social[src=(asset_path 'twitter128.png')]
-      // a[href="https://www.linkedin.com/"]
-      //   img.social[src=(asset_path 'linkedin128.png')]
-      // a[href="https://plus.google.com/"]
-      //   img.social[src=(asset_path 'google_plus128.png')]
+  javascript:
+    $( function() {
+      $.UIkit.init();
+    });
