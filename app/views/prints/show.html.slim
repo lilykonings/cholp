@@ -1,40 +1,40 @@
 .uk-grid(data-uk-grid-margin)
   .uk-width-medium-2-3.uk-width-large-3-4
     .profile_title = @p.name
-    #thumb_slider.thumb_slider[style="height:350px;"]
+    #thumb_slider[style="height:350px;"]
       .slides_main[u="slides" style="height:350px;"]
         div
-          div.slide[style="background-image: url('#{@p.picture_zero}');"]
+          .slide[u="image" style="background-image: url('#{@p.picture_zero}');"]
           img.thumb[u="thumb" src=@p.picture_zero]
         - if @p.picture_one
           div
-            div.slide[style="background-image: url('#{@p.picture_one}');"]
+            .slide[u="image" style="background-image: url('#{@p.picture_one}');"]
             img.thumb[u="thumb" src=@p.picture_one]
         - if @p.picture_two
           div
-            div.slide[style="background-image: url('#{@p.picture_two}');"]
+            .slide[u="image" style="background-image: url('#{@p.picture_two}');"]
             img.thumb[u="thumb" src=@p.picture_two]
         - if @p.picture_three
           div
-            div.slide[style="background-image: url('#{@p.picture_three}');"]
+            .slide[u="image" style="background-image: url('#{@p.picture_three}');"]
             img.thumb[u="thumb" src=@p.picture_three]
         - if @p.picture_four
           div
-            div.slide[style="background-image: url('#{@p.picture_four}');"]
+            .slide[u="image" style="background-image: url('#{@p.picture_four}');"]
             img.thumb[u="thumb" src=@p.picture_four]
         - if @p.picture_five
           div
-            div.slide[style="background-image: url('#{@p.picture_five}');"]
+            .slide[u="image" style="background-image: url('#{@p.picture_five}');"]
             img.thumb[u="thumb" src=@p.picture_five]
+      
+      .jssora05l[u="arrowleft" style="top:158px;left:8px;"]
+      .jssora05r[u="arrowright" style="top:158px;right:8px;"]
 
-      .jssora05l[u="arrowleft" style="top: 158px; left: 8px;"]
-      .jssora05r[u="arrowright" style="top: 158px; right: 8px"]
-
-      #thumbnavigator.thumbnav[u="thumbnavigator"]
+      .thumbnav[u="thumbnavigator"]
         .slides_nav[u="slides"]
           .p[u="prototype"]
             .w
-              t[u="thumbnailtemplate"]
+              .t[u="thumbnailtemplate"]
             .c
 
     .uk-grid.uk-margin-top

@@ -178,7 +178,7 @@ $tab_slider-tabs: 5;
     .p {
       position: absolute;
       width: 40px;
-      height: 40px;
+      height: 35px;
 
       &:hover .c {
         cursor: pointer;
@@ -191,7 +191,7 @@ $tab_slider-tabs: 5;
       &.pdn .c {
         background-position: 50% 50%;
         width: 40px;
-        height: 40px;
+        height: 35px;
       }
     }
 
@@ -210,7 +210,7 @@ $tab_slider-tabs: 5;
     .c {
       position: absolute;
       width: 40px;
-      height: 40px;
+      height: 35px;
       box-sizing: content-box;
       background-color: rgba(0,0,0,0.5);
       -webkit-transition: background-color 0.5s;
@@ -219,7 +219,7 @@ $tab_slider-tabs: 5;
 
     .pav .c {
       width: 40px;
-      height: 40px;
+      height: 35px;
       background-position: 50% 50%;
       background-color: rgba(255,255,255,0);
     }
@@ -229,7 +229,7 @@ $tab_slider-tabs: 5;
   * html .thumbnav .pdn .c,
   * html .thumbnav .pav .c {
     width: 40px;
-    height: 40px;
+    height: 35px;
   }
 }
 
