@@ -1,0 +1,51 @@
+.uk-grid
+  = render "dashboard/sidebar"
+  .uk-width-medium-2-3.uk-width-large-3-4
+    fieldset.info-box
+      legend Homepage features
+      - if @features.length == 0
+        p Sorry, no features right now.
+      - else
+        ul.uk-list.uk-list-line.uk-list-space
+          - @features.each do |p|
+            li
+              .uk-grid
+                .uk-width-1-2
+                  .grid_name = p.tab_title
+                .uk-width-1-2.uk-text-right.uk-text-muted
+                  = link_to "Remove", "/dashboard/remove_home_feature/#{p.id}"
+              strong.grid_desc = p.title
+              .grid_desc = p.description
+              a.grid_desc[href=p.link] = p.link
+      
+    .info-box.uk-margin-top
+      = form_tag('/dashboard/new_home_feature', multipart: true, :class => "uk-form uk-form-horizontal") do
+
+        .uk-form-row
+          label.uk-form-label[for="tab_title"] Tab title
+          .uk-form-controls
+            = text_field :f, :tab_title, :id => "tab_title", :class => "uk-form-large uk-width-1-1"
+
+        .uk-form-row
+          label.uk-form-label[for="link"] Link
+          .uk-form-controls
+            = text_field :f, :link, :id => "link", :class => "uk-form-large uk-width-1-1"
+
+        .uk-form-row
+          label.uk-form-label[for="image"] Image
+          .uk-form-controls
+            = file_field_tag 'image'
+
+        .uk-form-row
+          label.uk-form-label[for="title"] Overlay title
+          .uk-form-controls
+            = text_field :f, :title, :id => "title", :class => "uk-form-large uk-width-1-1"
+
+        .uk-form-row
+          label.uk-form-label[for="description"] Overlay description
+          .uk-form-controls
+            = text_area :f, :description, :id => "description", :class => "uk-form-large uk-width-1-1", :rows => 4
+
+        .uk-form-row
+          .uk-form-controls.uk-text-right
+            = submit_tag "Add", :id => "submit", :class => "uk-button uk-button--round uk-button-large"

@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get 'dashboard/manage' => 'dashboard#manage'
   get 'dashboard/settings' => 'dashboard#settings'
   get 'dashboard/updates' => 'dashboard#updates'
-  get 'dashboard/featured_prints' => 'dashboard#featured_prints'
+  get 'dashboard/home_features' => 'dashboard#home_features'
   get 'dashboard/top_creators' => 'dashboard#top_creators'
 
   post 'dashboard/save' => 'dashboard#save'
@@ -26,8 +26,8 @@ Rails.application.routes.draw do
   get 'dashboard/remove_feature/:id' => 'dashboard#remove_feature'
   post 'dashboard/new_update' => 'dashboard#new_update'
   get 'dashboard/remove_update/:id' => 'dashboard#remove_update'
-  post 'dashboard/new_featured' => 'dashboard#new_featured'
-  get 'dashboard/remove_featured_print/:id' => 'dashboard#remove_featured_print'
+  post 'dashboard/new_home_feature' => 'dashboard#new_home_feature'
+  get 'dashboard/remove_home_feature/:id' => 'dashboard#remove_home_feature'
   post 'dashboard/new_top_creator' => 'dashboard#new_top_creator'
   get 'dashboard/remove_top_creator/:id' => 'dashboard#remove_top_creator'
 
@@ -37,6 +37,7 @@ Rails.application.routes.draw do
   get 'contact' => 'contact#index'
   get 'privacy' => 'privacy#index'
   get 'terms' => 'terms#index'
+  get 'updates' => 'updates#index'
 
   post '/featured/add' => 'featured#add'
   get '/featured/:id/remove' => 'featured#remove'

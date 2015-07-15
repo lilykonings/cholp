@@ -7,7 +7,7 @@ ul.uk-tab(data-uk-tab data-uk-switcher="{connect:'#results'}")
 .info-box--tab
   ul#results.uk-switcher
     li
-      .uk-form.ih-form
+      form.uk-form.ih-form[action="/search"]
         fieldset(data-uk-margin)
           span Materials:
           = text_field_tag :q, params['q'], type: "hidden"

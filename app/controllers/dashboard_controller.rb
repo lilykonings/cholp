@@ -124,12 +124,50 @@ class DashboardController < ApplicationController
     end
   end
 
-  def update
-    @updates = Update.where()
+  def home_features
+    @features = Feature.order("created_at desc")
+  end
+
+  def new_home_feature
+    f = Feature.create(title: params[:f][:title])
+    f.update(tab_title: params[:f][:tab_title])
+    f.update(link: params[:f][:link])
+    f.update(description: params[:f][:description])
+
+    unless params[:image].nil?
+      path = feature_upload(f.id, params[:image])
+      f.update(image: path)
+    end
+
+    redirect_to action: 'home_features'
+  end
+
+  def remove_home_feature
+    Feature.find_by(id: params['id']).delete
+
+    redirect_to action: 'home_features'
+  end
+
+  def updates
+    @updates = Update.order("created_at desc")
   end
 
   def new_update
-    u = Update.create(title: params[:update][:title], link: params[:update][:link])
+    u = Update.create(title: params[:update][:title])
+
+    unless params[:update][:link].blank?
+      u.update(link: params[:update][:link])
+    else
+      u.update(link: "/updates#" + u.id.to_s)
+    end
+
+    u.update(description: params[:update][:description])
+
+    redirect_to action: 'updates'
+  end
+
+  def remove_update
+    Update.find_by(id: params['id']).delete
 
     redirect_to action: 'updates'
   end
@@ -152,24 +190,6 @@ class DashboardController < ApplicationController
     @c.featured = false
     @c.save()
     redirect_to action: 'top_creators'
-  end
-
-  def featured_prints
-    @featured_prints = Print.where(site_featured: true)
-  end
-
-  def new_featured
-    @p = Print.find_by(id: params[:p][:id])
-    @p.site_featured = true
-    @p.save()
-    redirect_to action: 'featured_prints'
-  end
-
-  def remove_featured_print
-    @p = Print.find_by(id: params['id'])
-    @p.site_featured = false
-    @p.save()
-    redirect_to action: 'featured_prints'
   end
 
   private

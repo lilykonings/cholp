@@ -1,22 +1,5 @@
 
 ---
-updates:
-  columns:
-  - id
-  - created_at
-  - title
-  - link
-  records: 
-  - - '1'
-    - '2015-07-10 23:46:03.289385'
-    - Ut enim ad minim veniam, quis nostrud exercitation ullamco.
-    - http://www.google.com
-  - - '2'
-    - '2015-07-11 00:34:32.316968'
-    - Ut enim ad minim veniam, quis nostrud exercitation ullamco.
-    - http://www.google.com
-
----
 users:
   columns:
   - id
@@ -112,30 +95,53 @@ users:
     - 
 
 ---
-comments:
+features:
   columns:
   - id
   - created_at
-  - updated_at
-  - user_id
-  - time
-  - comment
-  - print_id
+  - tab_title
+  - title
+  - description
+  - image
+  - link
   records: 
-  - - '1'
-    - '2015-07-10 16:45:29.74086'
-    - '2015-07-10 16:45:29.74086'
-    - '1'
-    - 
-    - This probably won't float well.
-    - '7'
   - - '2'
-    - '2015-07-10 16:48:01.185123'
-    - '2015-07-10 16:48:01.185123'
-    - '1'
-    - 
-    - Just tested it. Yup, doesn't float.
-    - '7'
+    - '2015-07-14 20:52:12.740796'
+    - Lorem ipsum dolor sit amet
+    - Ship
+    - A ship modeled after the revolutionary era ships. This print is untested and
+      contains small parts so be warned.
+    - "/home_features/2.png"
+    - http://127.0.0.1:3000/p/7
+  - - '3'
+    - '2015-07-14 20:54:02.888606'
+    - Integer finibus
+    - Dice Set Base
+    - A collection of dice of different sizes and sides. You wold have to carve or
+      mark the numbers if you choose to print them.
+    - "/home_features/3.png"
+    - http://127.0.0.1:3000/p/9
+  - - '4'
+    - '2015-07-14 20:58:37.169894'
+    - Quisque volutpat
+    - Modelman
+    - From models to tools, I'm your man.
+    - "/home_features/4.jpg"
+    - http://127.0.0.1:3000/Modelman
+  - - '5'
+    - '2015-07-14 20:58:40.402067'
+    - Donec a turpis
+    - Baja Car
+    - Scale model of the Cornell University baja racing car used for wind tunnel analysis.
+    - "/home_features/5.png"
+    - http://127.0.0.1:3000/p/8
+  - - '6'
+    - '2015-07-14 21:02:12.101104'
+    - Sed rutrum
+    - Pizpalue
+    - For all your puzzling needs.
+    - "/home_features/6.jpg"
+    - http://127.0.0.1:3000/pizpalue
 
 ---
 prints:
@@ -164,7 +170,6 @@ prints:
   - tolerance
   - creator_id
   - featured
-  - site_featured
   records: 
   - - '1'
     - '2015-07-06 14:38:19.860703'
@@ -190,7 +195,6 @@ prints:
     - '1'
     - '1'
     - false
-    - true
   - - '2'
     - '2015-07-06 14:48:59.447705'
     - '2015-07-11 00:29:16.978484'
@@ -215,7 +219,6 @@ prints:
     - '1'
     - '2'
     - false
-    - true
   - - '3'
     - '2015-07-06 14:50:14.384752'
     - '2015-07-11 00:29:11.308145'
@@ -241,7 +244,6 @@ prints:
     - '1'
     - '2'
     - true
-    - true
   - - '4'
     - '2015-07-06 14:51:18.673201'
     - '2015-07-11 00:29:19.888515'
@@ -266,7 +268,6 @@ prints:
     - '1'
     - '2'
     - false
-    - true
   - - '5'
     - '2015-07-06 14:52:20.48348'
     - '2015-07-10 22:21:23.660814'
@@ -291,7 +292,6 @@ prints:
     - '1'
     - '2'
     - true
-    - false
   - - '6'
     - '2015-07-06 14:53:22.330802'
     - '2015-07-11 00:29:14.141829'
@@ -316,10 +316,9 @@ prints:
     - '1'
     - '2'
     - false
-    - true
   - - '7'
     - '2015-07-06 14:55:33.912065'
-    - '2015-07-10 21:05:38.55381'
+    - '2015-07-14 20:39:22.569951'
     - Ship
     - A ship modeled after the revolutionary era ships. This print is untested and
       contains small parts so be warned.
@@ -330,7 +329,7 @@ prints:
     - 
     - 
     - 
-    - '154'
+    - '155'
     - 
     - '10'
     - '20'
@@ -342,10 +341,9 @@ prints:
     - '1'
     - '1'
     - true
-    - false
   - - '8'
     - '2015-07-06 14:56:49.501973'
-    - '2015-07-11 00:29:24.778245'
+    - '2015-07-14 20:55:36.564386'
     - Baja Car
     - Scale model of the Cornell University baja racing car used for wind tunnel analysis.
     - "/prints/8/stl.STL"
@@ -355,7 +353,7 @@ prints:
     - 
     - 
     - 
-    - '33'
+    - '34'
     - 
     - '89'
     - '95'
@@ -367,10 +365,9 @@ prints:
     - '1'
     - '1'
     - true
-    - true
   - - '9'
     - '2015-07-06 15:24:04.752234'
-    - '2015-07-10 06:12:11.596153'
+    - '2015-07-14 20:53:34.298457'
     - Dice Set Base
     - A collection of dice of different sizes and sides. You wold have to carve or
       mark the numbers if you choose to print them.
@@ -381,7 +378,7 @@ prints:
     - 
     - 
     - 
-    - '5'
+    - '6'
     - 
     - '10'
     - '10'
@@ -393,7 +390,6 @@ prints:
     - '1'
     - '3'
     - true
-    - false
   - - '10'
     - '2015-07-06 15:26:43.637219'
     - '2015-07-06 16:10:49.339538'
@@ -419,7 +415,6 @@ prints:
     - '1'
     - '3'
     - true
-    - false
   - - '11'
     - '2015-07-06 15:27:22.671435'
     - '2015-07-07 20:41:48.457194'
@@ -444,7 +439,6 @@ prints:
     - '1'
     - '1'
     - '3'
-    - false
     - false
   - - '12'
     - '2015-07-06 15:28:03.098632'
@@ -471,7 +465,6 @@ prints:
     - '1'
     - '3'
     - false
-    - false
   - - '13'
     - '2015-07-06 15:59:36.662778'
     - '2015-07-07 19:51:56.973074'
@@ -495,7 +488,6 @@ prints:
     - '1'
     - '1'
     - '4'
-    - false
     - false
   - - '14'
     - '2015-07-08 19:48:34.266442'
@@ -521,7 +513,49 @@ prints:
     - '1'
     - '1'
     - false
-    - false
+
+---
+updates:
+  columns:
+  - id
+  - created_at
+  - title
+  - link
+  - description
+  records: 
+  - - '5'
+    - '2015-07-15 04:18:31.814255'
+    - Lorem ipsum dolor sit amet
+    - "/updates#5"
+    - Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+      laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et
+      quasi.
+
+---
+comments:
+  columns:
+  - id
+  - created_at
+  - updated_at
+  - user_id
+  - time
+  - comment
+  - print_id
+  records: 
+  - - '1'
+    - '2015-07-10 16:45:29.74086'
+    - '2015-07-10 16:45:29.74086'
+    - '1'
+    - 
+    - This probably won't float well.
+    - '7'
+  - - '2'
+    - '2015-07-10 16:48:01.185123'
+    - '2015-07-10 16:48:01.185123'
+    - '1'
+    - 
+    - Just tested it. Yup, doesn't float.
+    - '7'
 
 ---
 creators:
@@ -543,7 +577,7 @@ creators:
   records: 
   - - '1'
     - '2015-07-06 14:35:58.932782'
-    - '2015-07-06 16:40:35.666276'
+    - '2015-07-14 20:57:37.036553'
     - true
     - pizpalue
     - "/creators/pizpalue/banner.jpg"
@@ -554,10 +588,10 @@ creators:
     - 
     - '1'
     - false
-    - false
+    - true
   - - '2'
     - '2015-07-06 14:47:45.131343'
-    - '2015-07-11 00:31:56.72651'
+    - '2015-07-14 20:57:40.385258'
     - true
     - lilyc5459
     - "/creators/lilyc5459/banner.jpg"
@@ -570,10 +604,10 @@ creators:
     - 
     - '2'
     - false
-    - false
+    - true
   - - '3'
     - '2015-07-06 15:23:16.872837'
-    - '2015-07-06 16:43:58.567163'
+    - '2015-07-14 20:57:50.475389'
     - true
     - Modelman
     - 
@@ -584,7 +618,7 @@ creators:
     - 
     - '3'
     - false
-    - false
+    - true
   - - '4'
     - '2015-07-06 15:58:30.848545'
     - '2015-07-06 16:28:34.882555'

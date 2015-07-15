@@ -29,32 +29,32 @@ Todo
   * See Mock 1 (Homepage)
   * [X] Section where we can link informational pages on the site (if we want to change our terms of use, or feature a story about the site, or feature additions to functionality)
   * Example: line “Additions Have Been Made to Cholp” would appear in the updates section,, user would then click on the line, would link to page with information (text) on site additions
-  * [ ] We need the ability to manage the updates section, possibly through our existing featured section admin portal (cholp/featured while logged in as administrator)
-    * [ ] Updates section form (within admin panel) should include 5 slots.  Each slot should have boxes to enter: a title (to be listed in the updates section and the title to the linked page) text (the paragraphs that will appear on the linked page) and date (which will appear at the bottom of each linked page)
+  * [X] We need the ability to manage the updates section, possibly through our existing featured section admin portal (cholp/featured while logged in as administrator)
+    * [X] Updates section form (within admin panel) should include 5 slots.  Each slot should have boxes to enter: a title (to be listed in the updates section and the title to the linked page) text (the paragraphs that will appear on the linked page) and date (which will appear at the bottom of each linked page)
     * See Mock 7 (what pages linked in the updates section should generally look like) and Mock 8 (what the Admin Panel should look like) THESE WILL HELP
 * Featured section
   * See Mock 1 (Homepage)
   * See www.ign.com for an example
   * [X] As we discussed in the meeting: Featured section should be scrollable. Should include graphics with linked text laid over.  Side bar snapped to the right side of the box should include title tiles which can be used to navigate between the different featured slots. 
-  * [ ] We need the ability to manage the featured section, again, possibly through modifying our existing featured section admin portal (cholp/featured while logged in as administrator)
-    * [ ] A small form with 5 possible slots. each slot consists of spaces to enter: a title for the tile, main title (overlaid over graphic), and link (which clicking on the main title will link to) as well as place to upload a graphic
+  * [X] We need the ability to manage the featured section, again, possibly through modifying our existing featured section admin portal (cholp/featured while logged in as administrator)
+    * [X] A small form with 5 possible slots. each slot consists of spaces to enter: a title for the tile, main title (overlaid over graphic), and link (which clicking on the main title will link to) as well as place to upload a graphic
     * See Mock 8
 * Top Creators Section
-  * [ ] Need to be able to manage this already existing section (again, possibly through the existing admin portal)
-  * [ ] Form should include slots for us to enter up to 5 creators. I guess we will have to type exact profile names as they appear on the site for this mechanism to work.  After saving the form, the creator’s thumbnail should appear in the top creators section.  
+  * [X] Need to be able to manage this already existing section (again, possibly through the existing admin portal)
+  * [X] Form should include slots for us to enter up to 5 creators. I guess we will have to type exact profile names as they appear on the site for this mechanism to work.  After saving the form, the creator’s thumbnail should appear in the top creators section.  
   * See Mock 8 for form example
 * [ ] Front Type (See Instructions_Copy)
 
 **Individual Print Page**
-* [ ] Specs section bars are wrong (outline is not thick enough) (See Tabs.png document)
-* [ ] Creator thumbnail should not be boxed in, and “uploaded by” title should not exist
-* [ ] Recommended Prints section should not be boxed in
+* [X] Specs section bars are wrong (outline is not thick enough) (See Tabs.png document)
+* [X] Creator thumbnail should not be boxed in, and “uploaded by” title should not exist
+* [X] Recommended Prints section should not be boxed in
 * [X] Recommended Prints section should be labeled with the word “Recommended”, not “Recommended Prints”
 * [X] “Recommended” font size should be bigger (See Mock 4)
 * [X] Description, Specs, and Comments titles need to be bigger (See Mock 4)
-* [ ] Selected images should not have black margins
+* [X] Selected images should not have black margins
 * [X] Profile Thumbnails (See 1B on this doc)
-* [ ] Individual Print Thumbnails (See 1C on this doc)
+* [X] Individual Print Thumbnails (See 1C on this doc)
 * [X] Font Type (See Instructions_Copy)
 
 **Creator Page**
@@ -63,7 +63,7 @@ Todo
 * [X] Social media icons/ links should appear below profile image
 * [X] Scrollable featured section should include information (ie image, upload name, number of views, upload date, and description) from selected prints (form to feature prints already exists in creator portal and information is already all stored on individual print pages)- See Mock 5 for a good illustration of what we are going for with this space (simply organizing information from individual print pages)
 * [X] “Top prints from…”should be labeled “Popular From…” and should not be boxed in
-* [ ] “View All” button should line up evenly with “Popular from…”
+* [X] “View All” button should line up evenly with “Popular from…”
 * [X] Creator name should not be yellow, and should be bigger (See Mock 5)
 * [X] There are some small corresponding changes that must be made to the “profile page form” (which is linked in the creator portal and is the medium through which creators manage their profile pages)
   * [X] Needs space to type in email (optional)
@@ -76,11 +76,20 @@ Todo
   * These were not implemented accurately
   * See attached document, Instructions-Copy
   * Fonts and colors for all pages
-* [ ] Thumbnail issues for all pages (INCLUDING SEARCH RESULTS), se 1B and 1C in this doc
-* [ ] General Site Header (Spacing, Login/ Logout button should be off white like the background, search bar should look like mocks and have rounded edges, logo should be slightly bigger, “Sign Up” and “Login/ Logout” should be capitalized)
+* [X] Thumbnail issues for all pages (INCLUDING SEARCH RESULTS), se 1B and 1C in this doc
+* [X] General Site Header (Spacing, Login/ Logout button should be off white like the background, search bar should look like mocks and have rounded edges, logo should be slightly bigger, “Sign Up” and “Login/ Logout” should be capitalized)
 * [X] Footer text should bold
 * [X] Grid System You Discussed Implementing
 * [X] MAKING THE PAGES LOOK LIKE MOCKS THROUGHOUT THE SITE
+
+**7/10 MEETING CHANGES**
+* [X] Featured section: not only prints, be able to have custom titles, links, images
+* [X] Bigger nav logo
+* [X] Spec section into pills
+* [X] On individual print page, replace desc in recommended section with views and date
+* [X] Search page
+* [ ] Slider thumbnail bug
+* [X] Updates feed
 
 Quick Start
 -------------

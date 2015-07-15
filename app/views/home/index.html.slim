@@ -1,16 +1,16 @@
 .uk-grid (data-uk-grid-match data-uk-grid-margin)
-  - unless @featured_prints.length == 0
+  - unless @features.length == 0
     .uk-width-medium-2-3.uk-width-large-3-4.uk-height-1-1
       #tab_slider.tab_slider
         .slides_main[u="slides"]
-          - @featured_prints.each do |f|
+          - @features.each do |f|
             div
-              .slide.uk-overlay[style="background-image: url('#{f.picture_zero}');"]
+              .slide.uk-overlay[style="background-image: url('#{f.image}');"]
                 .uk-overlay-panel.uk-overlay-bottom
-                  .overlay_title = f.name
+                  .overlay_title = f.title
                   p = f.description
               .thumb[u="thumb"]
-                .overlay_title = f.name
+                .overlay_title = f.tab_title
           
         #thumbnavigator.thumbnav[u="thumbnavigator"]
           .slides_nav[u="slides"]
@@ -19,20 +19,18 @@
                 .c.uk-vertical-align
                   .uk-vertical-align-middle[u="thumbnailtemplate"]
 
-  - unless @top_prints.length == 0
-    .uk-width-medium-1-3.uk-width-large-1-4.uk-height-1-1
-      fieldset.info-box--updates.uk-width-1-1.uk-height-1-1
-        legend Updates
+  .uk-width-medium-1-3.uk-width-large-1-4.uk-height-1-1
+    fieldset.info-box--updates.uk-width-1-1.uk-height-1-1
+      legend Updates
+      - unless @updates.length == 0
         ul.uk-list.uk-list-line.uk-margin-remove
-          li
-            | 6/2: 
-            a.underline[href=""] Additions Have Been Made to Cholp
-          li
-            | 5/25: 
-            a.underline[href=""] Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          li
-            | 5/13: 
-            a.underline[href=""] Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+          - @updates.each do |u|
+            li
+              = u.created_at.strftime("%m/%d")
+              | : 
+              a.underline[href=u.link] = u.title
+      - else
+        | No updates right now!
 
 .uk-grid (data-uk-grid-match data-uk-grid-margin)
   - unless @top_prints.length == 0

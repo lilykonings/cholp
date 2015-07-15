@@ -84,7 +84,7 @@
     .profile_section.uk-width-1-1
       h3 Comments
       - unless @c.length == 0
-        ul.profile_comments.uk-list
+        ul.profile_comments.uk-list.uk-margin-top-remove
           - @c.each do |c|
             li
               strong = link_to "#{User.find_by(id: c.user_id).username}", "/#{User.find_by(id: c.user_id).username}"
@@ -144,4 +144,15 @@
 javascript:
   $( function() {
     var thumb_slider = new $JssorSlider$("thumb_slider", thumb_options);
+
+    function ScaleSlider() {
+      var parentWidth = $("#thumb_slider").parent().width();
+      if (parentWidth)
+        thumb_slider.$ScaleWidth(Math.max(Math.min(parentWidth, 750), 300));
+      else
+        window.setTimeout(ScaleSlider, 30);
+    }
+    $(window).bind("load", ScaleSlider);
+    $(window).bind("resize", ScaleSlider);
+    $(window).bind("orientationchange", ScaleSlider);
   });

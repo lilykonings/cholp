@@ -1,0 +1,11 @@
+fieldset.info-box
+  legend Updates
+  - unless @updates.length == 0
+    ul.uk-list.uk-list-line.uk-margin-remove
+      - @updates.each do |u|
+        li[id=u.id]
+          .grid_desc = u.created_at.strftime("%B %d, %Y")
+          a.grid_name[href=u.link] = u.title
+          p = u.description
+  - else
+    | No updates right now!

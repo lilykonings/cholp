@@ -28,11 +28,19 @@ module UploadHelper
     return write(dir, file)
   end
 
-  # uploads file to creator directory with
+  # uploads file to print directory with
   # file_name as the new file name
   def print_upload(id, file_name, file)
     dir = "prints/#{id}"
     file.original_filename = file_name + (File.extname file.original_filename)
+    return write(dir, file)
+  end
+
+  # uploads file to home_features directory with
+  # id as the new file name
+  def feature_upload(id, file)
+    dir = "home_features"
+    file.original_filename = id.to_s + (File.extname file.original_filename)
     return write(dir, file)
   end
 

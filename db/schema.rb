@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150711000516) do
+ActiveRecord::Schema.define(version: 20150715023351) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,17 @@ ActiveRecord::Schema.define(version: 20150711000516) do
     t.boolean  "featured"
   end
 
+  create_table "features", force: true do |t|
+    t.datetime "created_at"
+    t.string   "tab_title"
+    t.string   "title"
+    t.text     "description"
+    t.string   "image"
+    t.string   "link"
+  end
+
+  add_index "features", ["id"], name: "index_features_on_id", unique: true, using: :btree
+
   create_table "prints", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -80,7 +91,6 @@ ActiveRecord::Schema.define(version: 20150711000516) do
     t.float    "tolerance"
     t.integer  "creator_id"
     t.boolean  "featured"
-    t.boolean  "site_featured"
   end
 
   create_table "subscriptions", force: true do |t|
@@ -94,6 +104,7 @@ ActiveRecord::Schema.define(version: 20150711000516) do
     t.datetime "created_at"
     t.string   "title"
     t.string   "link"
+    t.text     "description"
   end
 
   add_index "updates", ["id"], name: "index_updates_on_id", unique: true, using: :btree

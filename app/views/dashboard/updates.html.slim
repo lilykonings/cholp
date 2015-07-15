@@ -3,15 +3,21 @@
   .uk-width-medium-2-3.uk-width-large-3-4
     fieldset.info-box
       legend Updates
-      / ul.uk-list.uk-list-line.uk-list-space.uk-margin-remove
-      /   - @updates.each do |u|
-      /     li
-      /       .uk-grid
-      /         .uk-width-1-2.uk-text-bold
-      /           = u.title
-      /         .uk-width-1-2.uk-text-right.uk-text-muted
-      /           = link_to 'Delete', "delete"
+      - unless @updates.length == 0
+        ul.uk-list.uk-list-line.uk-list-space.uk-margin-remove
+          - @updates.each do |u|
+            li
+              .uk-grid
+                .uk-width-1-2
+                  = u.created_at.strftime("%B %d, %Y")
+                .uk-width-1-2.uk-text-right
+                  = link_to "Remove", "/dashboard/remove_update/#{u.id}"
+              .uk-text-bold = u.title
+              a.grid_desc[href=u.link] = u.link
+      - else
+        p Sorry, no updates right now.
 
+    .info-box.uk-margin-top
       = form_tag('/dashboard/new_update', multipart: true, :class => "uk-form uk-form-horizontal") do
 
         .uk-form-row
@@ -19,15 +25,17 @@
           .uk-form-controls
             = text_field :update, :title, :id => "title", :class => "uk-form-large uk-width-1-1"
 
-        / .uk-form-row
-        /   label.uk-form-label[for="date"] Date
-        /   .uk-form-controls
-        /     = text_field :update, :date, :id => "date", :class => "uk-form-large uk-width-1-1", :value => "#{@current_date}"
-
         .uk-form-row
           label.uk-form-label[for="link"] Link
           .uk-form-controls
             = text_field :update, :link, :id => "link", :class => "uk-form-large uk-width-1-1"
+            .uk-text-muted.uk-margin-small-top
+                | Leave blank if you want it to direct to the updates feed
+
+        .uk-form-row
+          label.uk-form-label[for="description"] Description
+          .uk-form-controls
+            = text_area :update, :description, :id => "description", :class => "uk-form-large uk-width-1-1"
 
         .uk-form-row
           .uk-form-controls.uk-text-right
