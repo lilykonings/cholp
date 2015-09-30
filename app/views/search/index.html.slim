@@ -20,11 +20,13 @@ ul.uk-tab(data-uk-tab data-uk-switcher="{connect:'#results'}")
           = submit_tag 'Filter', class: "uk-button uk-button--round"
       - unless @prints.length == 0
         .uk-grid (data-uk-grid-margin)
-          - @prints.each do |p|
+          - @prints.zip(@purchased_prints).each do |p,purchased|
             dl.uk-width-1-2.uk-width-small-1-3.uk-width-large-1-4
               dt
                 a[href="p/#{p.id}"]
                   .grid_img.uk-margin-small-bottom[style="background-image: url('#{p.picture_zero}');height:150px;"]
+                    - if purchased
+                      img.grid_banner[src=(asset_path 'sold-banner.png')]
                 a.grid_name[href="p/#{p.id}"] = p.name
                 p.grid_desc = p.description
       - else
@@ -39,7 +41,7 @@ ul.uk-tab(data-uk-tab data-uk-switcher="{connect:'#results'}")
             - unless p.creator.nil?
               dl.uk-width-1-2.uk-width-small-1-3.uk-width-large-1-4
                 dt
-                  a[href="p/#{p.id}"]
+                  a[href="/#{p.username}"]
                     .grid_img.uk-margin-small-bottom[style="background-image: url('#{p.creator.icon}');height:150px;"]
                   a.grid_name[href="/#{p.username}"] = p.username
                   p.grid_desc = p.creator.description

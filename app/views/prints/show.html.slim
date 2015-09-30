@@ -39,9 +39,34 @@
 
     .uk-grid.uk-margin-top
       .uk-width-1-2
-        a.profile_btn.btn-blue--round
-          i.uk-icon-download
-          |  STL file
+        // Someone's gonna have to fix this mess...
+        - if signed_in?
+          - if current_user.creator && @p.creator_id == current_user.creator.id
+            a.profile_btn.btn--round[href="/p/#{@p.id}/edit"]
+              i.uk-icon-pencil
+              |  Edit print
+          - else
+            - if @p.price
+              - if @purchased
+                a.profile_btn.btn-blue--round[href="#{@p.path}"]
+                  i.uk-icon-download
+                  |  STL file
+              - else
+                a#buy_submit.profile_btn.btn-blue--round.uk-margin-small-right[href="/paypal/checkout/#{@p.id}"]
+                  | Buy for #{number_to_currency(@p.price, :unit => "$")}
+            - else
+              a.profile_btn.btn-blue--round[href="#{@p.path}"]
+                i.uk-icon-download
+                |  STL file
+        - else
+          - if @p.price
+            button.profile_btn.btn-blue--round[disabled]
+              i.uk-icon-download
+              |  Login to buy
+          - else
+            a.profile_btn.btn-blue--round[href="#{@p.path}"]
+              i.uk-icon-download
+              |  STL file
       .profile_meta.uk-width-1-2.uk-text-right
         | Uploaded on 
         strong = @p.created_at.strftime("%B %d, %Y")
@@ -155,4 +180,8 @@ javascript:
     $(window).bind("load", ScaleSlider);
     $(window).bind("resize", ScaleSlider);
     $(window).bind("orientationchange", ScaleSlider);
+    $('#buy_submit').on("click", function() {
+      $(this).parent().html("<button class='profile_btn btn--round' disabled>Waiting...</button>");
+      $(this).hide();
+    });
   });

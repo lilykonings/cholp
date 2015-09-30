@@ -15,6 +15,16 @@ class SearchController < ApplicationController
         @prints = @prints.where("materials ilike ?", "%#{m}%")
       end
     end
+
+    @purchased_prints ||= []
+    
+    @prints.each do |p|
+      if Transaction.exists?(:print_id => p.id)
+        @purchased_prints << true
+      else
+        @purchased_prints << false
+      end
+    end
   end
 
   # def people 

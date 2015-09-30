@@ -19,7 +19,10 @@
       ul.uk-list.uk-list-line.uk-margin-remove
         li
           strong
-            = @c.number_prints
+            - if @c.number_prints == nil
+              | 0
+            - else
+              = @c.number_prints
             |  prints
         li.uk-margin-small-top
           a[href="mailto:#{@c_user.email}"] = @c_user.email
@@ -53,7 +56,10 @@
                     = image_tag p.picture_zero, class: 'uk-width-1-1'
                 .uk-width-2-3
                   a[href="p/#{p.id}"]
-                    .profile_title = p.name
+                    .profile_title.uk-display-inline = p.name
+                  - if p.price
+                    .profile_price.uk-float-right
+                      = number_to_currency(p.price, :unit => "$")
                   .uk-grid
                     .uk-width-1-2
                       .profile_meta
@@ -82,11 +88,13 @@
       | Popular from  
       = @c.name
     .uk-grid.uk-grid-medium (data-uk-grid-margin)
-      - @top_prints.each do |p|
+      - @top_prints.zip(@purchased_top_prints).each do |p,purchased|
         dl.uk-width-small-1-2.uk-width-medium-1-3
           dt
             a[href="p/#{p.id}"]
               .grid_img.uk-margin-small-bottom[style="background-image: url('#{p.picture_zero}');height:200px;"]
+                - if purchased
+                  img.grid_banner[src=(asset_path 'sold-banner.png')]
             a.grid_name[href="p/#{p.id}"] = p.name
             .uk-grid
               .grid_meta.uk-width-1-2

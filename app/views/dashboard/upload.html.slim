@@ -1,4 +1,4 @@
-.uk-grid
+.uk-grid(data-uk-grid-margin)
   = render "dashboard/sidebar"
   .uk-width-medium-2-3.uk-width-large-3-4
     fieldset.info-box
@@ -15,7 +15,16 @@
             .uk-form-row
               label.uk-form-label[for="description"] Description
               .uk-form-controls
-                = text_area :p, :description, autofocus: true, :id => "description", :class => "uk-form-large uk-width-1-1", :rows => 4
+                = text_area :p, :description, :id => "description", :class => "uk-form-large uk-width-1-1", :rows => 4
+
+            - if current_user.paypal
+              .uk-form-row
+                label.uk-form-label[for="price"] Price
+                .uk-margin-bottom Optional. Leave blank if you do not wish to charge a price for this print.
+                .uk-form-controls
+                  .uk-form-icon
+                    i.uk-icon-usd
+                    = number_field_tag :price, nil, :id => "price", :step => 0.01
 
             .uk-form-row
               label.uk-form-label[for="stl"] STL file

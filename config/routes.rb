@@ -9,15 +9,21 @@ Rails.application.routes.draw do
   post 'creators/enable' => 'creators#enable'
   post 'creators/disable' => 'creators#disable'
 
+  # Dashboard
   get 'dashboard' => 'dashboard#index'
   get 'dashboard/edit' => 'dashboard#edit'
   get 'dashboard/upload' => 'dashboard#upload'
   get 'dashboard/manage' => 'dashboard#manage'
   get 'dashboard/settings' => 'dashboard#settings'
+  get 'dashboard/sold' => 'dashboard#sold_prints'
+  get 'dashboard/purchased' => 'dashboard#purchased_prints'
+
+  # Admin Dashboard
   get 'dashboard/updates' => 'dashboard#updates'
   get 'dashboard/home_features' => 'dashboard#home_features'
   get 'dashboard/top_creators' => 'dashboard#top_creators'
 
+  # Form Handlers
   post 'dashboard/save' => 'dashboard#save'
   post 'dashboard/remove_banner' => 'dashboard#remove_banner'
   post 'dashboard/remove_icon' => 'dashboard#remove_icon'
@@ -30,6 +36,7 @@ Rails.application.routes.draw do
   get 'dashboard/remove_home_feature/:id' => 'dashboard#remove_home_feature'
   post 'dashboard/new_top_creator' => 'dashboard#new_top_creator'
   get 'dashboard/remove_top_creator/:id' => 'dashboard#remove_top_creator'
+  post 'dashboard/update_paypal' => 'dashboard#update_paypal'
 
   get 'search' => 'search#index'
   # get 'search/creators' => 'search#people'
@@ -55,6 +62,9 @@ Rails.application.routes.draw do
   get '/:user/unsubscribe' => 'users#unsubscribe'
   get '/dashboard/subscriptions' => 'dashboard#subscriptions'
 
+  # Paypal
+  get 'paypal/checkout/:id' => 'paypal/adaptive_payments#pay'
+  get 'paypal/ipn_notify/:id' => 'paypal/adaptive_payments#ipn_notify', :as => :ipn_notify
 
   resources :searches
   resources :prints

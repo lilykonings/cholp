@@ -105,8 +105,16 @@ main {
 }
 
 .grid_img {
+  position: relative;
   width: 100%;
   @include fullbg;
+}
+
+.grid_banner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
 }
 
 .grid_meta {

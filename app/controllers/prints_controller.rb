@@ -12,6 +12,13 @@ class PrintsController < ApplicationController
       flash[:alert] = "print #{params[:id]} not found"
       redirect_to controller: 'home', action: 'index'
     end
+
+    @purchased = false
+    if current_user
+      if Transaction.exists?(:print_id => @p.id, :buyer_id => current_user.id)
+        @purchased = true
+      end
+    end
   end
 
   def new
@@ -19,8 +26,9 @@ class PrintsController < ApplicationController
     p = upload()
     if p
       current_user.creator.prints << p
-
-      flash[:notice] = 'print uploaded successfully'
+      # Yea, this is a dumb way to do it but I'll fix it later
+      current_user.creator.increment!(:number_prints)
+      flash[:notice] = 'Print uploaded successfully'
       redirect_to :controller => 'dashboard', :action => 'upload'
     else
       flash[:notice] = 'Please fill in all the fields'
@@ -37,6 +45,12 @@ class PrintsController < ApplicationController
 
   def delete
     @p = Print.find_by(id: params[:id])
+    c = Creator.find_by(id: @p.creator_id)
+    if (c.number_prints > 0)
+      c.decrement!(:number_prints)
+    else
+      c.number_prints = 0
+    end
     @p.destroy
     redirect_to(:back)
   end

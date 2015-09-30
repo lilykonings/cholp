@@ -44,3 +44,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'ransack'
 gem 'rails_12factor'
 gem 'yaml_db'
+gem 'paypal-sdk-adaptivepayments'

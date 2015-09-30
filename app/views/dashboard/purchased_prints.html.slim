@@ -1,0 +1,19 @@
+.uk-grid(data-uk-grid-margin)
+  = render "dashboard/sidebar"
+  .uk-width-medium-2-3.uk-width-large-3-4
+    fieldset.info-box
+      legend Purchased Prints
+      - if @transactions.zip(@prints).length == 0
+        p.uk-text-center Nothing...yet!
+      - else
+        ul.uk-list.uk-list-line.uk-list-space
+          - @transactions.zip(@prints).each do |t,p|
+            li
+              .uk-grid
+                .uk-width-1-2
+                  .uk-margin-right.uk-display-inline.text--mute
+                    = t.created_at.strftime("%m/%d/%y")
+                  a.uk-display-inline.uk-text-bold[href="/p/#{p.id}"] = p.name
+                .uk-width-1-2.uk-text-right
+                  a.uk-margin-right[href="#{p.path}"] Download
+                  |  #{number_to_currency(p.price, :unit => "$")}

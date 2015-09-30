@@ -192,6 +192,47 @@ class DashboardController < ApplicationController
     redirect_to action: 'top_creators'
   end
 
+  def sold_prints
+    c = current_user.creator
+    if !c
+      current_user.creator = Creator.create(name: current_user.username, active: true)
+    end
+
+    @prints = Print.where(creator_id: c.id).where("price > ?", 0).order("id DESC")
+
+    @prints_sold ||= []
+    @print_rev ||= []
+
+    @prints.each do |p|
+      count = 0
+      transactions = Transaction.where(print_id: p.id)
+
+      transactions.each do |t|
+        count += 1
+      end
+
+      @prints_sold << count
+      @print_rev << (count * p.price)
+    end
+  end
+
+  def update_paypal
+    new_paypal = params[:paypal][:email]
+    current_user.update(paypal: new_paypal)
+    flash[:notice] = 'updated Paypal account'
+    redirect_to action: 'sold_prints'
+  end
+
+  def purchased_prints
+    @prints ||= []
+    @transactions = Transaction.where(buyer_id: current_user.id).order("created_at DESC")
+
+    @transactions.each do |t|
+      p = Print.find_by(id: t.print_id)
+      @prints << p
+    end
+  end
+
   private
 
   def user_params

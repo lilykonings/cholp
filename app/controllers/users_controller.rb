@@ -13,11 +13,31 @@ class UsersController < ApplicationController
     @c_user = User.find_by(id: @c.user_id)
     @featured_prints = Print.where(creator_id: @c.id, featured: true)
     @top_prints = Print.where(creator_id: @c.id).order("num_prints desc").limit(6)
+
+    @purchased_top_prints ||= []
+    
+    @top_prints.each do |p|
+      if Transaction.exists?(:print_id => p.id)
+        @purchased_top_prints << true
+      else
+        @purchased_top_prints << false
+      end
+    end
   end
 
   def show_all
     @c = Creator.find_by(name: params[:user])
     @prints = Print.where(creator_id: @c.id)
+
+    @purchased_prints ||= []
+    
+    @prints.each do |p|
+      if Transaction.exists?(:print_id => p.id)
+        @purchased_prints << true
+      else
+        @purchased_prints << false
+      end
+    end
   end
 
   def unsubscribe

@@ -1,0 +1,40 @@
+.uk-grid(data-uk-grid-margin)
+  = render "dashboard/sidebar"
+  .uk-width-medium-2-3.uk-width-large-3-4
+    fieldset.info-box.uk-margin-bottom
+      legend Paypal Account
+      = form_tag('/dashboard/update_paypal', multipart: true, :class => "uk-form uk-form-horizontal") do
+
+        .uk-form-row
+          label.uk-form-label[for="paypal"] PayPal email address
+          .uk-form-controls
+            = text_field :paypal, :email, :id=>"paypal", :class=>"uk-form-large uk-width-1-1", :value => "#{current_user.paypal}"
+            .uk-text-muted.uk-margin-small-top
+              | Make sure this is correct! Otherwise, something may go wrong with processing payments to you.
+
+        .uk-form-row
+          .uk-form-controls.uk-text-right
+            = submit_tag "Save", :id => "submit", :class => "uk-button uk-button--round uk-button-large"
+    fieldset.info-box
+      legend Listed For Sale
+      - if current_user.paypal
+        - if @prints.length == 0
+          | You're not currently selling any prints!
+        - else
+          table.uk-table.uk-table-striped.uk-width-1-1.uk-text-right.uk-margin-remove
+            thead
+              tr
+                th.uk-width-1-2.uk-text-left Print name
+                th.uk-width-1-6.uk-text-right Sold
+                th.uk-width-1-6.uk-text-right Price
+                th.uk-width-1-6.uk-text-right Total
+            tbody
+              - @prints.zip(@prints_sold, @print_rev).each do |p,sold,rev|
+                tr
+                  td.uk-text-left
+                    a[href="/p/#{p.id}"] = p.name
+                  td = sold
+                  td #{number_to_currency(p.price, :unit => "$")}
+                  td #{number_to_currency(rev, :unit => "$")}
+      - else
+        | Please enter a PayPal account first!

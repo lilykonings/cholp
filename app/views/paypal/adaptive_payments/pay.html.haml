@@ -1,0 +1,10 @@
+- if @pay_response
+  %div#response
+    / %p
+    /   %b Ruby Code:
+    /   = find_and_preserve CodeRay.scan(generate_code(@pay, @pay_response), "ruby").div.html_safe
+    %p
+      = find_and_preserve CodeRay.scan(format_hash(@pay_response.to_hash(:attribute => false, :namespace => false)), "ruby").div.html_safe
+
+  - if @pay_response.success?
+    = link_to "Redirect URL to Complete Payment", @api.payment_url(@pay_response)
